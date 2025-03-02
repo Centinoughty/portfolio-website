@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Nadeem M Siyam",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="antialiased bg-[#f1ede6]">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
