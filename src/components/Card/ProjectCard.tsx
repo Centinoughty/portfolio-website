@@ -2,6 +2,7 @@ import { fira } from "@/styles/fonts";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { IoIosCode } from "react-icons/io";
+import { Project } from "../../../util/types";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (

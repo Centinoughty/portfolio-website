@@ -1,7 +1,5 @@
-import ProjectCard from "@/components/Card/ProjectCard";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { featured } from "../../data/projects";
 import { bric, fira } from "@/styles/fonts";
 
 export default function Home() {
