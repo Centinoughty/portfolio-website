@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { bric, fira } from "@/styles/fonts";
+import Title from "@/components/Text/Title";
 
 export default function Home() {
   return (
@@ -40,30 +41,26 @@ export default function Home() {
 
       <div className="my-[8vh]"></div>
 
-      <section id="about" className="mx-[5%] min-h-screen">
-        <h3
-          className={`${bric.className} my-6 text-[var(--primary-color)] font-semibold text-[7vw] lg:text-[2.5vw]`}
-        >
-          About Me
-        </h3>
+      <section id="about" className="mx-[5%]">
+        <Title text="About Me" />
         <div className="flex flex-col md:flex-row justify-center items-center gap-[10vw]">
           <div>
             <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full"></div>
           </div>
-          <div className="sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+          <div className="lg:max-w-lg xl:max-w-xl">
             <div className="flex flex-col gap-2">
               <span
                 className={`text-[var(--primary-color)] ${fira.className} font-semibold text-[5vw] md:text-[3vw] lg:text-[2vw] xl:text-[1.3vw]`}
               >
                 [about]
               </span>
-              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[1.1vw]">
+              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I'm a second-year B.Tech CSE student at NIT Calicut, interested
                 in web and app development, DevOps, and AI/ML. I enjoy building
                 applications, optimizing systems, and exploring new
                 technologies.
               </p>
-              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[1.1vw]">
+              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I have completed over 30 projects with over 4 years of
                 experience.
               </p>
@@ -75,11 +72,7 @@ export default function Home() {
       <div className="my-[7vh]"></div>
 
       <section id="projects" className="mx-[5%] min-h-screen">
-        <h3
-          className={`${bric.className} my-6 text-[var(--primary-color)] font-semibold text-[7vw] lg:text-[2.5vw]`}
-        >
-          Featured Projects
-        </h3>
+        <Title text="Featured Projects" />
       </section>
     </>
   );
