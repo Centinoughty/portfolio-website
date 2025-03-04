@@ -11,7 +11,7 @@ export default function Footer() {
           >
             Copyright 2025 All Right Reserved
           </p>
-          <div className="flex gap-4 text-[3.5vh] text-[var(--primary-color)]">
+          <div className="flex gap-4 text-[3.5vh]">
             <FaGithub />
             <FaLinkedin />
             <FaInstagram />
