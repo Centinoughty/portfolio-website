@@ -1,46 +1,13 @@
-"use client";
-
-import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
 import { featured, projects } from "../../data/projects";
 import ProjectCard from "@/components/Card/ProjectCard";
 import FeatureCard from "@/components/Card/FeatureCard";
-import React, { useRef } from "react";
 import ContactCard from "@/components/Card/ContactCard";
 
 export default function Home() {
-  const nameRef = useRef<HTMLInputElement | null>(null);
-  const emailRef = useRef<HTMLInputElement | null>(null);
-  const messageRef = useRef<HTMLTextAreaElement | null>(null);
-
-  const handleFocus = (
-    ref: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>
-  ) => {
-    setTimeout(() => {
-      ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 300);
-  };
-
   return (
     <>
-      {/* <div className="p-4 fixed bottom-0 right-0 flex flex-col gap-1">
-        <Link
-          href="https://github.com/Centinoughty"
-          target="_blank"
-          className="p-1"
-        >
-          <FaGithub className="text-3xl" />
-        </Link>
-        <Link
-          href="https://linkedin.com/in/nadeem-m-siyam"
-          target="_blank"
-          className="p-1"
-        >
-          <FaLinkedin className="text-3xl" />
-        </Link>
-      </div> */}
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
         <div className="mt-32 flex flex-col items-center">
           <div
@@ -58,7 +25,7 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="my-[8vh]"></div>
+      <div className="my-[10vh]"></div>
 
       <section id="about" className="mx-[5%]">
         <Title text="About Me" />
