@@ -8,6 +8,7 @@ import { featured, projects } from "../../data/projects";
 import ProjectCard from "@/components/Card/ProjectCard";
 import FeatureCard from "@/components/Card/FeatureCard";
 import React, { useRef } from "react";
+import ContactCard from "@/components/Card/ContactCard";
 
 export default function Home() {
   const nameRef = useRef<HTMLInputElement | null>(null);
@@ -43,7 +44,7 @@ export default function Home() {
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
         <div className="mt-32 flex flex-col items-center">
           <div
-            className={`${bric.className} text-[14vw] md:text-[8vw] lg:text-[6vw] font-bold text-[var(--primary-color)]`}
+            className={`${bric.className} text-[15vw] md:text-[8vw] lg:text-[6vw] font-bold text-[var(--primary-color)]`}
           >
             <h1>I'm Nadeem.</h1>
             <h2 className="-mt-[7%]">A Developer.</h2>
@@ -108,6 +109,10 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <div className="my-[7vh]"></div>
+
+      <ContactCard />
 
       <div className="my-[7vh]"></div>
     </>

@@ -18,20 +18,20 @@ export const projects: Project[] = [
     url: "https://ragam.co.in",
   },
   {
+    name: "OGS",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://ogsofficial.com",
+  },
+  {
     name: "Tathva 2024",
     description:
       "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
     tools: ["React", "GSAP", "Strapi"],
     github: "",
     url: "https://tathva.org",
-  },
-  {
-    name: "OGS Official",
-    description:
-      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
-    tools: ["React", "GSAP", "Strapi"],
-    github: "",
-    url: "https://ogsofficial.com",
   },
   {
     name: "NITC Meet",
