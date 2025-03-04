@@ -1,11 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
-import { projects } from "../../data/projects";
+import { featured, projects } from "../../data/projects";
 import ProjectCard from "@/components/Card/ProjectCard";
+import FeatureCard from "@/components/Card/FeatureCard";
+import React, { useRef } from "react";
 
 export default function Home() {
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+
+  const handleFocus = (
+    ref: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>
+  ) => {
+    setTimeout(() => {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 300);
+  };
+
   return (
     <>
       {/* <div className="p-4 fixed bottom-0 right-0 flex flex-col gap-1">
@@ -56,13 +72,13 @@ export default function Home() {
               >
                 [about]
               </span>
-              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
+              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I'm a second-year B.Tech CSE student at NIT Calicut, interested
                 in web and app development, DevOps, and AI/ML. I enjoy building
                 applications, optimizing systems, and exploring new
                 technologies.
               </p>
-              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
+              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I have completed over 30 projects with over 4 years of
                 experience.
               </p>
@@ -71,17 +87,22 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="my-[7vh]"></div>
+      <div className="my-[10vh]"></div>
 
       <section id="projects" className="mx-[5%]">
         <Title text="Featured Projects" />
+        <div className="md:mx-[3%] grid lg:grid-cols-2 gap-[5%]">
+          {featured.map((feature, idx) => (
+            <FeatureCard key={idx} feature={feature} />
+          ))}
+        </div>
       </section>
 
-      <div className="my-[7vh]"></div>
+      <div className="my-[10vh]"></div>
 
       <section id="all-projects" className="mx-[5%]">
         <Title text="All Projects" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="md:mx-[3%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5vw]">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}

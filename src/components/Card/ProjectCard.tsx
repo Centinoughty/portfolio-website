@@ -7,8 +7,8 @@ import { LuCodeXml } from "react-icons/lu";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <>
-      <div className="mx-auto p-4 max-w-sm flex flex-col gap-2 rounded-lg shadow-md">
-        <div className="mb-2 flex justify-between items-center gap-1">
+      <div className="mx-auto p-4 max-w-md flex flex-col gap-3 rounded-lg shadow-md">
+        <div className="mb-3 flex justify-between items-center gap-1">
           <h4
             className={`${bric.className} text-[var(--primary-color)] font-bold text-[6vw] md:text-[4vw] lg:text-[2.25vw] xl:text-[1.5vw]`}
           >
