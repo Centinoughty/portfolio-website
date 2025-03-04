@@ -1,5 +1,70 @@
-export const projects = [
-  { name: "", description: "", tools: "", github: "", url: "" },
+import { Project } from "../util/types";
+
+export const projects: Project[] = [
+  {
+    name: "Minerva",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://minerva.nitc.ac.in",
+  },
+  {
+    name: "Ragam 2025",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://ragam.co.in",
+  },
+  {
+    name: "Tathva 2024",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://tathva.org",
+  },
+  {
+    name: "OGS Official",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "https://github.com/Centinoughty",
+    url: "https://ogsofficial.com",
+  },
+  {
+    name: "Minerva",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://minerva.nitc.ac.in",
+  },
+  {
+    name: "Ragam 2025",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://ragam.co.in",
+  },
+  {
+    name: "Tathva 2024",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "",
+    url: "https://tathva.org",
+  },
+  {
+    name: "OGS Official",
+    description:
+      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+    tools: ["React", "GSAP", "Strapi"],
+    github: "https://github.com/Centinoughty",
+    url: "https://ogsofficial.com",
+  },
 ];
 
 export const featured: Project[] = [

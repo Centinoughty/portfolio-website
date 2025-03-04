@@ -1,4 +1,11 @@
-import { Bricolage_Grotesque, Fira_Mono, Montserrat } from "next/font/google";
+import {
+  Borel,
+  Bricolage_Grotesque,
+  Fira_Mono,
+  Homemade_Apple,
+  Montserrat,
+  Playwrite_IT_Moderna,
+} from "next/font/google";
 
 export const bric = Bricolage_Grotesque({ subsets: ["latin"] });
 
@@ -8,3 +15,5 @@ export const fira = Fira_Mono({
 });
 
 export const mont = Montserrat({ subsets: ["latin"] });
+
+export const home = Homemade_Apple({ weight: ["400"], subsets: ["latin"] });

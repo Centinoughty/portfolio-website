@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
+import { projects } from "../../data/projects";
+import ProjectCard from "@/components/Card/ProjectCard";
 
 export default function Home() {
   return (
@@ -71,9 +73,22 @@ export default function Home() {
 
       <div className="my-[7vh]"></div>
 
-      <section id="projects" className="mx-[5%] min-h-screen">
+      <section id="projects" className="mx-[5%]">
         <Title text="Featured Projects" />
       </section>
+
+      <div className="my-[7vh]"></div>
+
+      <section id="all-projects" className="mx-[5%]">
+        <Title text="All Projects" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {projects.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <div className="my-[7vh]"></div>
     </>
   );
 }
