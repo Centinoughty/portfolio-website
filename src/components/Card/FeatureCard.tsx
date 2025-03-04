@@ -23,7 +23,7 @@ export default function FeatureCard({ feature }: { feature: Project }) {
           <p className={`${mont.className} tracking-wide px-2`}>
             {feature.description}
           </p>
-          <ul className="p-2 max-w-lg flex flex-wrap gap-3 font-mono">
+          <ul className="p-2 flex flex-wrap gap-3 font-mono">
             {feature.tools.map((tool, idx) => (
               <li
                 key={idx}

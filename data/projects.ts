@@ -50,7 +50,7 @@ export const projects: Project[] = [
     url: "",
   },
   {
-    name: "ballly io",
+    name: "bally io",
     description:
       "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
     tools: ["React", "GSAP", "Strapi"],
