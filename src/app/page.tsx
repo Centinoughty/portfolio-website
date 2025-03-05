@@ -3,7 +3,6 @@ import Title from "@/components/Text/Title";
 import { featured, projects } from "../../data/projects";
 import ProjectCard from "@/components/Card/ProjectCard";
 import FeatureCard from "@/components/Card/FeatureCard";
-import ContactCard from "@/components/Card/ContactCard";
 
 export default function Home() {
   return (
@@ -25,7 +24,7 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="my-[10vh]"></div>
+      <div className="my-[12vh]"></div>
 
       <section id="about" className="mx-[5%]">
         <Title text="About Me" />
@@ -36,7 +35,7 @@ export default function Home() {
           <div className="lg:max-w-lg xl:max-w-xl">
             <div className="flex flex-col gap-2">
               <span
-                className={`text-[var(--primary-color)] ${fira.className} font-semibold text-[5vw] md:text-[3vw] lg:text-[2vw] xl:text-[1.3vw]`}
+                className={`mb-2 text-[var(--primary-color)] ${fira.className} font-semibold text-[5vw] md:text-[3vw] lg:text-[2vw] xl:text-[1.3vw]`}
               >
                 [about]
               </span>
@@ -55,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="my-[10vh]"></div>
+      <div className="my-[12vh]"></div>
 
       <section id="projects" className="mx-[5%]">
         <Title text="Featured Projects" />
@@ -66,7 +65,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="my-[10vh]"></div>
+      <div className="my-[12vh]"></div>
 
       <section id="all-projects" className="mx-[5%]">
         <Title text="All Projects" />
@@ -77,11 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="my-[7vh]"></div>
-
-      <ContactCard />
-
-      <div className="my-[7vh]"></div>
+      <div className="my-[12vh]"></div>
     </>
   );
 }

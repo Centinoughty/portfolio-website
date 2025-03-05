@@ -7,3 +7,11 @@ export interface Project {
   role?: string;
   image?: string;
 }
+
+export interface Experience {
+  title: string;
+  role: string;
+  year: number;
+  url?: string;
+  work: string;
+}
