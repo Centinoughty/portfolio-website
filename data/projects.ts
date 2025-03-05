@@ -76,16 +76,16 @@ export const featured: Project[] = [
     image: "/temp.png",
     github: "https://github.com/Centinoughty",
     url: "https://minerva.nitc.ac.in",
-    tools: ["React", "FastAPI", "Docker", "PostgreSQL"],
+    tools: ["React", "NextJS", "ReduxJS", "FastAPI", "Docker", "PostgreSQL"],
   },
   {
-    name: "Minerva",
+    name: "Null Pointer",
     description:
       "hvdfhkr bhkfg brkjbvgk rbfiu hrjfh vrhvg uhrkevgh rhghr ighvfg hvrg be ghrihe gihruehguerhgoh erughfiuer hv;kbnd fkgh",
     role: "Developer",
     image: "/temp.png",
     github: "https://github.com/Centinoughty",
-    url: "https://minerva.nitc.ac.in",
-    tools: ["React"],
+    url: "https://github.com/Centinoughty",
+    tools: ["Node", "Express", "MongoDB"],
   },
 ];

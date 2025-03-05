@@ -10,7 +10,7 @@ export default function Home() {
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
         <div className="mt-32 flex flex-col items-center">
           <div
-            className={`${bric.className} text-[15vw] md:text-[8vw] lg:text-[6vw] font-bold text-[var(--primary-color)]`}
+            className={`${bric.className} text-[14vw] md:text-[8vw] lg:text-[6vw] font-bold text-[var(--primary-color)]`}
           >
             <h1>I'm Nadeem.</h1>
             <h2 className="-mt-[7%]">A Developer.</h2>
@@ -70,7 +70,7 @@ export default function Home() {
       <section id="all-projects" className="mx-[5%]">
         <Title text="All Projects" />
         <div className="md:mx-[3%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5vw]">
-          {projects.map((project, idx) => (
+          {projects.slice(0, 3).map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
