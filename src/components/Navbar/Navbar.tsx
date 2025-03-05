@@ -6,7 +6,7 @@ export default function Navbar() {
     <>
       <nav className="z-10 absolute top-0 left-0 w-full px-[3%] md:px-[13%] py-4 border-b border-b-gray-300 flex justify-between items-center backdrop-blur-[5px]">
         <div className={`${home.className} md:text-lg`}>
-          <Link href="/">nadeem</Link>
+          <Link href="/" className="px-4 py-1">nadeem</Link>
         </div>
         <div className="hidden text-gray-600 font-mono md:flex gap-4">
           <Link href="">About</Link>
