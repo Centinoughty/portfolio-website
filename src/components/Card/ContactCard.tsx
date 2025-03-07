@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef } from "react";
 import Input from "../Input/Input";
+import { fira } from "@/styles/fonts";
 
 export default function ContactCard() {
   const nameRef = useRef<HTMLInputElement | null>(null);
@@ -23,7 +24,7 @@ export default function ContactCard() {
         <Input title="Message" type="text" textarea />
         <button
           type="submit"
-          className="w-fit px-4 py-2 rounded-md text-[var(--accent)] bg-[var(--primary-color)]/80 hover:bg-[var(--primary-color)] duration-300"
+          className={`w-fit px-4 py-2 rounded-md ${fira.className} text-[var(--accent)] font-medium bg-[var(--primary-color)]/80 hover:bg-[var(--primary-color)] duration-300`}
         >
           Send
         </button>

@@ -5,6 +5,7 @@ import ProjectCard from "@/components/Card/ProjectCard";
 import FeatureCard from "@/components/Card/FeatureCard";
 import Link from "next/link";
 import ContactCard from "@/components/Card/ContactCard";
+import ConnectCard from "@/components/Card/ConnectCard";
 
 export default function Home() {
   return (
@@ -99,6 +100,16 @@ export default function Home() {
           <div className="flex justify-center">
             <ContactCard />
           </div>
+        </div>
+        <div className="mt-6 flex flex-col-reverse md:flex-row justify-center items-center gap-[10%]">
+          <div className="flex justify-center">
+            <ConnectCard />
+          </div>
+          <p
+            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[] xl:text-[3vw]`}
+          >
+            For more details...
+          </p>
         </div>
       </section>
     </>
