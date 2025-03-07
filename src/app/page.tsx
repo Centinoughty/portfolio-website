@@ -4,6 +4,7 @@ import { featured, projects } from "../../data/projects";
 import ProjectCard from "@/components/Card/ProjectCard";
 import FeatureCard from "@/components/Card/FeatureCard";
 import Link from "next/link";
+import ContactCard from "@/components/Card/ContactCard";
 
 export default function Home() {
   return (
@@ -87,7 +88,19 @@ export default function Home() {
 
       <div className="my-[12vh]"></div>
 
-      <section></section>
+      <section id="connect" className="mx-[5%]">
+        <Title text="Let's Connect" />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-[10%]">
+          <p
+            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[] xl:text-[3vw]`}
+          >
+            Have a project idea in your mind?
+          </p>
+          <div className="flex justify-center">
+            <ContactCard />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
