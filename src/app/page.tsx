@@ -3,6 +3,7 @@ import Title from "@/components/Text/Title";
 import { featured, projects } from "../../data/projects";
 import ProjectCard from "@/components/Card/ProjectCard";
 import FeatureCard from "@/components/Card/FeatureCard";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
         <div className="mt-32 flex flex-col items-center">
           <div
-            className={`${bric.className} text-[14vw] md:text-[8vw] lg:text-[6vw] font-bold text-[var(--primary-color)]`}
+            className={`${bric.className} text-[14vw] md:text-[10vw] lg:text-[8vw] xl:text-[6vw] font-bold text-[var(--primary-color)]`}
           >
             <h1>I'm Nadeem.</h1>
             <h2 className="-mt-[7%]">A Developer.</h2>
@@ -74,9 +75,19 @@ export default function Home() {
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
+        <div className="md:mx-[3%] mt-6 md:mt-8 flex justify-end">
+          <Link
+            href="/projects"
+            className={`${fira.className} font-semibold underline text-[var(--primary-color)] text-[4vw] sm:text-[3.4vw] md:text-[2.2vw] lg:text-[1.6vw] xl:text-[1vw]`}
+          >
+            see all projects
+          </Link>
+        </div>
       </section>
 
       <div className="my-[12vh]"></div>
+
+      <section></section>
     </>
   );
 }

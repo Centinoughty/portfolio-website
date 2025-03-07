@@ -1,10 +1,8 @@
 import {
-  Borel,
   Bricolage_Grotesque,
   Fira_Mono,
   Homemade_Apple,
   Montserrat,
-  Playwrite_IT_Moderna,
 } from "next/font/google";
 
 export const bric = Bricolage_Grotesque({ subsets: ["latin"] });

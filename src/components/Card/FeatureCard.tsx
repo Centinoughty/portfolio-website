@@ -1,14 +1,18 @@
-import { bric, fira, mont } from "@/styles/fonts";
+import { bric, mont } from "@/styles/fonts";
 import { Project } from "../../../util/types";
+import Image from "next/image";
 
 export default function FeatureCard({ feature }: { feature: Project }) {
   return (
     <>
       <div>
         <div className="mb-2 relative">
-          <img
-            src={feature.image}
+          <Image
+            src={feature.image || ""}
             alt={feature.name}
+            width={0}
+            height={0}
+            sizes="100vw"
             className="w-full object-cover"
             style={{ boxShadow: "0px 0px 6px rgba(1, 1, 1, 0.6)" }}
           />
