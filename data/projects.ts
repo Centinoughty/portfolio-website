@@ -81,11 +81,11 @@ export const featured: Project[] = [
   {
     name: "Null Pointer",
     description:
-      "hvdfhkr bhkfg brkjbvgk rbfiu hrjfh vrhvg uhrkevgh rhghr ighvfg hvrg be ghrihe gihruehguerhgoh erughfiuer hv;kbnd fkgh",
+      "Null Pointer is a file management API that allows users to upload files via HTTP requests. Users can upload local files using curl commands. This service allows users to upload files to a server and retrieves a publicly accessible URL for each uploaded file.",
     role: "Developer",
     image: "/temp.png",
     github: "https://github.com/Centinoughty",
     url: "https://github.com/Centinoughty",
-    tools: ["Node", "Express", "MongoDB"],
+    tools: ["Node", "Express", "MongoDB", "Multer"],
   },
 ];

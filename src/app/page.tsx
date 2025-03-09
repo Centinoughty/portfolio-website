@@ -33,7 +33,13 @@ export default function Home() {
         <Title text="About Me" />
         <div className="flex flex-col md:flex-row justify-center items-center gap-[10vw]">
           <div>
-            <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full"></div>
+            <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
+              <img
+                src="/me.jpg"
+                alt="Nadeem M Siyam"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="lg:max-w-lg xl:max-w-xl">
             <div className="flex flex-col gap-2">
@@ -91,25 +97,21 @@ export default function Home() {
 
       <section id="connect" className="mx-[5%]">
         <Title text="Let's Connect" />
-        <div className="flex flex-col md:flex-row justify-center items-center gap-[10%]">
+        <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-[10%]">
+          <ContactCard />
           <p
-            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[5vw] xl:text-[3vw]`}
+            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] sm:text-[6.5vw] md:text-[5vw] xl:text-[3vw]`}
           >
             Have a project idea in your mind?
           </p>
-          <div className="flex justify-center">
-            <ContactCard />
-          </div>
         </div>
-        <div className="mt-6 flex flex-col-reverse md:flex-row justify-center items-center gap-[10%]">
-          <div className="flex justify-center">
-            <ConnectCard />
-          </div>
+        <div className="mt-16 flex flex-col md:flex-row justify-center items-center gap-[10%]">
           <p
-            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[5vw] xl:text-[3vw]`}
+            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] sm:text-[6.5vw] md:text-[5vw] xl:text-[3vw]`}
           >
             For more details...
           </p>
+          <ConnectCard />
         </div>
       </section>
     </>
