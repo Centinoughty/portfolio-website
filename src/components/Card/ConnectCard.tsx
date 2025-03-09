@@ -10,7 +10,7 @@ export default function ConnectCard() {
           <p>Send me a mail at</p>
           <Link
             href={`mailto:${EMAIl}`}
-            className="underline font-semibold tracking-wide"
+            className="font-semibold tracking-wide"
           >
             {EMAIl}
           </Link>
