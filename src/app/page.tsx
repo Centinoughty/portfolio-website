@@ -93,7 +93,7 @@ export default function Home() {
         <Title text="Let's Connect" />
         <div className="flex flex-col md:flex-row justify-center items-center gap-[10%]">
           <p
-            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[] xl:text-[3vw]`}
+            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[5vw] xl:text-[3vw]`}
           >
             Have a project idea in your mind?
           </p>
@@ -106,7 +106,7 @@ export default function Home() {
             <ConnectCard />
           </div>
           <p
-            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[] xl:text-[3vw]`}
+            className={`max-w-xl ${bric.className} text-center text-[var(--primary-color)] font-medium text-[8vw] md:text-[5vw] xl:text-[3vw]`}
           >
             For more details...
           </p>

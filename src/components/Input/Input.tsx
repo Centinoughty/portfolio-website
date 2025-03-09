@@ -1,4 +1,5 @@
 import { bric } from "@/styles/fonts";
+import React, { forwardRef } from "react";
 
 interface Input {
   type: string;
@@ -6,7 +7,10 @@ interface Input {
   textarea?: boolean;
 }
 
-export default function Input({ textarea = false, ...props }: Input) {
+export default forwardRef(function Input(
+  { textarea = false, ...props }: Input,
+  ref
+) {
   const className = `outline-none border-2 border-[var(--primary-color)]/20 focus:border-[var(--primary-color)]/80 rounded-md px-2 py-1 font-mont tracking-wide`;
 
   return (
@@ -18,11 +22,18 @@ export default function Input({ textarea = false, ...props }: Input) {
           {props.title}
         </span>
         {textarea ? (
-          <textarea className={`${className} h-[100px] resize-none`}></textarea>
+          <textarea
+            ref={ref as React.RefObject<HTMLTextAreaElement>}
+            className={`${className} h-[100px] resize-none`}
+          ></textarea>
         ) : (
-          <input type={props.type} className={`${className}`} />
+          <input
+            ref={ref as React.RefObject<HTMLInputElement>}
+            type={props.type}
+            className={`${className}`}
+          />
         )}
       </div>
     </>
   );
-}
+});
