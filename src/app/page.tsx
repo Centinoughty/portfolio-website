@@ -86,7 +86,7 @@ export default function Home() {
         <div className="md:mx-[3%] mt-6 md:mt-8 flex justify-end">
           <Link
             href="/projects"
-            className={`${fira.className} font-semibold underline text-[var(--primary-color)] text-[4vw] sm:text-[3.4vw] md:text-[2.2vw] lg:text-[1.6vw] xl:text-[1vw]`}
+            className={`${fira.className} font-semibold underline underline-offset-2 text-[var(--primary-color)] text-[4vw] sm:text-[3.4vw] md:text-[2.2vw] lg:text-[1.6vw] xl:text-[1vw]`}
           >
             see all projects
           </Link>

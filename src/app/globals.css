@@ -5,3 +5,13 @@
   --secondary-color: #4b5f5a;
   --accent: #f1ede6;
 }
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--accent);
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}

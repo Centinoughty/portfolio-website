@@ -28,7 +28,7 @@ export default function ContactCard() {
         <Input title="Message" type="text" textarea ref={messageRef} />
         <button
           type="submit"
-          className={`cursor-pointer w-fit px-4 py-2 rounded-md ${fira.className} text-[var(--accent)] font-medium bg-[var(--primary-color)]/80 hover:bg-[var(--primary-color)] duration-300`}
+          className={`cursor-pointer w-fit px-4 py-2 rounded-md ${fira.className} text-[var(--accent)] font-medium bg-[var(--primary-color)] hover:shadow-md hover:-translate-y-0.5 duration-300`}
         >
           Send
         </button>
