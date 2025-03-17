@@ -48,13 +48,13 @@ export default function Home() {
               >
                 [about]
               </span>
-              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
-                I'm a second-year B.Tech CSE student at NIT Calicut, interested
+              <p className="text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
+                I am a second-year B.Tech CSE student at NIT Calicut, interested
                 in web and app development, DevOps, and AI/ML. I enjoy building
                 applications, optimizing systems, and exploring new
                 technologies.
               </p>
-              <p className="px-4 text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
+              <p className="text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I have completed over 30 projects with over 4 years of
                 experience.
               </p>
