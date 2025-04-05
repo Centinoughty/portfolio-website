@@ -6,6 +6,7 @@ import FeatureCard from "@/components/Card/FeatureCard";
 import Link from "next/link";
 import ContactCard from "@/components/Card/ContactCard";
 import ConnectCard from "@/components/Card/ConnectCard";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -34,9 +35,12 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-[10vw]">
           <div>
             <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
-              <img
+              <Image
                 src="/me.jpg"
                 alt="Nadeem M Siyam"
+                width={0}
+                height={0}
+                sizes="100vw"
                 className="object-cover"
               />
             </div>
@@ -48,13 +52,13 @@ export default function Home() {
               >
                 [about]
               </span>
-              <p className="text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
+              <p className="text-[var(--secondary-color)] text-[4.5vw] sm:text-[3.7vw] md:text-[2.3vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I am a second-year B.Tech CSE student at NIT Calicut, interested
                 in web and app development, DevOps, and AI/ML. I enjoy building
                 applications, optimizing systems, and exploring new
                 technologies.
               </p>
-              <p className="text-[var(--secondary-color)] text-[4.3vw] sm:text-[3.7vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.15vw]">
+              <p className="text-[var(--secondary-color)] text-[4.5vw] sm:text-[3.7vw] md:text-[2.3vw] lg:text-[1.7vw] xl:text-[1.15vw]">
                 I have completed over 30 projects with over 4 years of
                 experience.
               </p>
