@@ -35,12 +35,9 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-[10vw]">
           <div>
             <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
-              <Image
+              <img
                 src="/me.jpg"
                 alt="Nadeem M Siyam"
-                width={0}
-                height={0}
-                sizes="100vw"
                 className="object-cover"
               />
             </div>
