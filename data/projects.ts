@@ -1,5 +1,3 @@
-import { Project } from "../util/types";
-
 export const projects: Project[] = [
   {
     name: "Minerva",
