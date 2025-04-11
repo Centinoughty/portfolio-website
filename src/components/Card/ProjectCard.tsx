@@ -1,5 +1,4 @@
 import { bric, mont } from "@/styles/fonts";
-import { Project } from "../../../util/types";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import { LuCodeXml } from "react-icons/lu";

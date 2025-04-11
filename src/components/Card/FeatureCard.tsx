@@ -1,5 +1,4 @@
 import { bric, mont } from "@/styles/fonts";
-import { Project } from "../../../util/types";
 import Image from "next/image";
 
 export default function FeatureCard({ feature }: { feature: Project }) {
