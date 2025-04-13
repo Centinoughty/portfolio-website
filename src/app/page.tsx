@@ -7,6 +7,9 @@ import Link from "next/link";
 import ContactCard from "@/components/Card/ContactCard";
 import ConnectCard from "@/components/Card/ConnectCard";
 import Heading from "@/components/Text/Heading";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { GITHUB, LEETCODE, LINKEDIN } from "../../util/constant";
+import ProfileButton from "@/components/Button/ProfileButton";
 
 export default function Home() {
   return (
@@ -21,9 +24,20 @@ export default function Home() {
           </div>
           <div className="mx-4 sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
             <p className="text-center text-[var(--secondary-color)] font-medium text-[3.5vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[1.05vw]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eos
-              amet corporis quas pariatur? Mollitia?
+              Passionate developer building real-world solutions, blending code
+              with creativity to solve complex problems every day.
             </p>
+            <div className="mt-[4%] text-[7vw] md:text-[5vw] lg:text-[3vw] xl:text-[1.7vw] flex justify-center gap-4">
+              <ProfileButton href={GITHUB}>
+                <FaGithub />
+              </ProfileButton>
+              <ProfileButton href={LINKEDIN}>
+                <FaLinkedin />
+              </ProfileButton>
+              <ProfileButton href={LEETCODE}>
+                <FaGithub />
+              </ProfileButton>
+            </div>
           </div>
         </div>
       </main>

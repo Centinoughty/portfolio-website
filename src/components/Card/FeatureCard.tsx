@@ -1,5 +1,6 @@
 import { bric, mont } from "@/styles/fonts";
 import Image from "next/image";
+import Skill from "../Text/Skill";
 
 export default function FeatureCard({ feature }: { feature: Project }) {
   return (
@@ -28,12 +29,7 @@ export default function FeatureCard({ feature }: { feature: Project }) {
           </p>
           <ul className="mt-2 p-2 flex flex-wrap gap-2 font-mono">
             {feature.tools.map((tool, idx) => (
-              <li
-                key={idx}
-                className="text-[var(--secondary-color)] px-2 py-1 rounded-full bg-[var(--primary-color)]/10 text-sm"
-              >
-                {tool}
-              </li>
+              <Skill key={idx} skill={tool} />
             ))}
           </ul>
         </div>
