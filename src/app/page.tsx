@@ -7,9 +7,6 @@ import Link from "next/link";
 import ContactCard from "@/components/Card/ContactCard";
 import ConnectCard from "@/components/Card/ConnectCard";
 import Heading from "@/components/Text/Heading";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { GITHUB, LEETCODE, LINKEDIN } from "../../util/constant";
-import ProfileButton from "@/components/Button/ProfileButton";
 
 export default function Home() {
   return (
@@ -27,17 +24,6 @@ export default function Home() {
               Passionate developer building real-world solutions, blending code
               with creativity to solve complex problems every day.
             </p>
-            <div className="mt-[4%] text-[7vw] md:text-[5vw] lg:text-[3vw] xl:text-[1.7vw] flex justify-center gap-4">
-              <ProfileButton href={GITHUB}>
-                <FaGithub />
-              </ProfileButton>
-              <ProfileButton href={LINKEDIN}>
-                <FaLinkedin />
-              </ProfileButton>
-              <ProfileButton href={LEETCODE}>
-                <FaGithub />
-              </ProfileButton>
-            </div>
           </div>
         </div>
       </main>
@@ -119,6 +105,7 @@ export default function Home() {
                     className="h-10"
                   />
                   <img src="/logo/pandas.svg" alt="Pandas" className="h-10" />
+                  <img src="/logo/ansible.svg" alt="Ansible" className="h-10" />
                 </div>
               </div>
             </div>
