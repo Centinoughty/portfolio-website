@@ -56,7 +56,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-lg bg-[var(--primary-color)]/25 backdrop-blur-[11px] text-[var(--primary-color)] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20">
+        <div className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-lg bg-[var(--primary-color)]/25 backdrop-blur-[11px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20">
           <Link href="#" onClick={toggleMenu}>
             About
           </Link>
