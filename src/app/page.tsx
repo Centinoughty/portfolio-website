@@ -7,6 +7,7 @@ import Link from "next/link";
 import ContactCard from "@/components/Card/ContactCard";
 import ConnectCard from "@/components/Card/ConnectCard";
 import Heading from "@/components/Text/Heading";
+import SkillsGrid from "@/components/Grid/SkillsGrid";
 
 export default function Home() {
   return (
@@ -59,54 +60,7 @@ export default function Home() {
             <div className="lg:max-w-lg xl:max-w-xl">
               <div className="flex flex-col gap-2">
                 <Heading text="skills" />
-                <div className="px-2 flex flex-wrap gap-x-[13px] gap-y-5 md:gap-5">
-                  <img src="/logo/react.svg" alt="React JS" className="h-10" />
-                  <img src="/logo/redux.svg" alt="Redux JS" className="h-10" />
-                  <img src="/logo/next.svg" alt="Next JS" className="h-10" />
-                  <img
-                    src="/logo/tailwindcss.svg"
-                    alt="Tailwind CSS"
-                    className="h-10"
-                  />
-                  <img
-                    src="/logo/threejs.svg"
-                    alt="Three JS"
-                    className="h-10"
-                  />
-                  <img src="/logo/node.svg" alt="Node JS" className="h-10" />
-                  <img
-                    src="/logo/express.svg"
-                    alt="Express JS"
-                    className="h-10"
-                  />
-                  <img src="/logo/flask.svg" alt="Flask" className="h-10" />
-                  <img src="/logo/fastapi.svg" alt="FastAPI" className="h-10" />
-                  <img
-                    src="/logo/socketio.svg"
-                    alt="Socket.io"
-                    className="h-10"
-                  />
-                  <img src="/logo/mysql.svg" alt="MySQL" className="h-10" />
-                  <img src="/logo/mongodb.svg" alt="MongoDB" className="h-10" />
-                  <img
-                    src="/logo/postgresql.svg"
-                    alt="PostgreSQL"
-                    className="h-10"
-                  />
-                  <img src="/logo/docker.svg" alt="Docker" className="h-10" />
-                  <img src="/logo/linux.svg" alt="Linux" className="h-10" />
-                  <img src="/logo/git.svg" alt="Git" className="h-10" />
-                  <img src="/logo/bash.svg" alt="Bash" className="h-10" />
-                  <img src="/logo/nginx.svg" alt="nginx" className="h-10" />
-                  <img src="/logo/azure.svg" alt="Azure" className="h-10" />
-                  <img
-                    src="/logo/firebase.svg"
-                    alt="Firebase"
-                    className="h-10"
-                  />
-                  <img src="/logo/pandas.svg" alt="Pandas" className="h-10" />
-                  <img src="/logo/ansible.svg" alt="Ansible" className="h-10" />
-                </div>
+                <SkillsGrid />
               </div>
             </div>
           </div>
