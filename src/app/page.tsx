@@ -8,6 +8,7 @@ import ContactCard from "@/components/Card/ContactCard";
 import ConnectCard from "@/components/Card/ConnectCard";
 import Heading from "@/components/Text/Heading";
 import SkillsGrid from "@/components/Grid/SkillsGrid";
+import ExperienceSection from "@/components/Section/ExperienceSection";
 
 export default function Home() {
   return (
@@ -71,6 +72,7 @@ export default function Home() {
 
       <section id="experience" className="mx-[5%]">
         <Title text="Experience" />
+        <ExperienceSection />
       </section>
 
       <div className="my-[12vh]"></div>
