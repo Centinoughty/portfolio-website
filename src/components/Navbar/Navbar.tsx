@@ -13,22 +13,19 @@ export default function Navbar() {
   return (
     <>
       <nav className="z-10 absolute top-0 left-0 w-full px-[3%] md:px-[13%] py-4 border-b border-b-gray-300 flex justify-between items-center backdrop-blur-[5px]">
-        {/* Logo */}
         <div className={`${home.className} md:text-lg`}>
           <Link href="/" className="px-4 py-1">
             nadeem
           </Link>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden text-gray-600 font-mono md:flex gap-4">
           <Link href="#">About</Link>
-          <Link href="#">Projects</Link>
+          <Link href="/projects">Projects</Link>
           <Link href="#">Play</Link>
           <Link href="#">Contact</Link>
         </div>
 
-        {/* Hamburger Icon - Mobile */}
         <div
           className="md:hidden text-xl text-gray-700 cursor-pointer"
           onClick={toggleMenu}
@@ -54,7 +51,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/30 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20">
           <Link href="#" onClick={toggleMenu}>

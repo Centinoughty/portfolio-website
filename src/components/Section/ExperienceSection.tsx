@@ -3,6 +3,7 @@ import { bric } from "@/styles/fonts";
 const experiences = [
   {
     company: "NITC Hostels",
+    project: "Hostel Website",
     date: "Jan 2025 - Present",
     title: "Lead Developer",
     description:
@@ -10,6 +11,7 @@ const experiences = [
   },
   {
     company: "CSED NITC",
+    project: "Minerva",
     date: "Dec 2024 - Feb 2025",
     title: "Junior Developer",
     description:
@@ -17,6 +19,7 @@ const experiences = [
   },
   {
     company: "Pediaverse",
+    project: "OGS",
     date: "Dec 2024 - Mar 2025",
     title: "Developer",
     description:
@@ -35,9 +38,12 @@ export default function ExperienceSection() {
           className="flex justify-between gap-4 md:gap-12 w-full relative"
         >
           <div className="min-w-[120px] w-1/3">
-            <h3 className="text-[6vw] sm:text-[6vw] md:text-[4vw] lg:text-[2.5vw] xl:text-[1.8vw] font-semibold">
-              {exp.company}
+            <h3 className="text-[6vw] sm:text-[6vw] md:text-[4vw] lg:text-[2.5vw] xl:text-[1.8vw] font-semibold text-[var(--primary-color)]">
+              {exp.project}
             </h3>
+            <p className="xl:text-[1.2vw] font-medium text-[var(--secondary-color)]">
+              {exp.company}
+            </p>
             <p className="xl:text-[1.2vw] text-[var(--secondary-color)]">
               {exp.date}
             </p>
