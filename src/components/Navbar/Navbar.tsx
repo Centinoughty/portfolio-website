@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import { home } from "@/styles/fonts";
 import Link from "next/link";
+import { MdClose } from "react-icons/md";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,7 +34,7 @@ export default function Navbar() {
           onClick={toggleMenu}
         >
           {menuOpen ? (
-            <FaTimes color="#025a4e" />
+            <MdClose color="#025a4e" />
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-lg bg-[var(--primary-color)]/25 backdrop-blur-[11px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20">
+        <div className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/30 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20">
           <Link href="#" onClick={toggleMenu}>
             About
           </Link>
