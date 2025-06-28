@@ -1,5 +1,5 @@
 interface Experience {
-  title: string;
+  company: string;
   role: string;
   work: string;
   description: string;

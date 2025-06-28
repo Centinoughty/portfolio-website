@@ -47,15 +47,15 @@ export default function Home() {
           <div className="lg:max-w-lg xl:max-w-xl flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <Heading text="about" />
-              <p className="px-2 text-[var(--secondary-color)] text-[4.5vw] sm:text-[3.7vw] md:text-[2.3vw] lg:text-[1.7vw] xl:text-[1.15vw]">
-                I am Nadeem M Siyam, a second-year B.Tech CSE student at NIT
+              <p className="px-2 text-[var(--secondary-color)] text-[4.5vw] sm:text-[3.7vw] md:text-[2.3vw] lg:text-[1.7vw] xl:text-[1.1vw]">
+                I am Nadeem M Siyam, a third-year B.Tech CSE student at NIT
                 Calicut, interested in web and app development, DevOps,
                 cybersecurity, and AI/ML. I enjoy building applications,
                 optimizing systems, and exploring new technologies.
               </p>
-              <p className="px-2 text-[var(--secondary-color)] text-[4.5vw] sm:text-[3.7vw] md:text-[2.3vw] lg:text-[1.7vw] xl:text-[1.15vw]">
-                I have completed over 30 projects with over 4 years of
-                experience.
+              <p className="px-2 text-[var(--secondary-color)] text-[4.5vw] sm:text-[3.7vw] md:text-[2.3vw] lg:text-[1.7vw] xl:text-[1.1vw]">
+                I am passionate about building and maintaining a home lab that
+                runs all the services I love.
               </p>
             </div>
             <div className="lg:max-w-lg xl:max-w-xl">
