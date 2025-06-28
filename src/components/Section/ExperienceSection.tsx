@@ -2,6 +2,14 @@ import { bric } from "@/styles/fonts";
 
 const experiences = [
   {
+    company: "CCD NITC",
+    project: "Elevate",
+    date: "Jul 2025 - Present",
+    title: "Developer",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+  },
+  {
     company: "NITC Hostels",
     project: "Hostel Website",
     date: "Jan 2025 - Present",
@@ -14,14 +22,6 @@ const experiences = [
     project: "Minerva",
     date: "Dec 2024 - Feb 2025",
     title: "Junior Developer",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
-  },
-  {
-    company: "Pediaverse",
-    project: "OGS",
-    date: "Dec 2024 - Mar 2025",
-    title: "Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
   },

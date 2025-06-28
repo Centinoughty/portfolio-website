@@ -1,14 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { home } from "@/styles/fonts";
 import Link from "next/link";
 import { MdClose } from "react-icons/md";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        toggleMenu();
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen, toggleMenu]);
 
   return (
     <>
@@ -24,6 +41,12 @@ export default function Navbar() {
           <Link href="/projects">Projects</Link>
           <Link href="#">Play</Link>
           <Link href="#">Contact</Link>
+          <Link
+            href="https://drive.google.com/file/d/1DjghVezG53l5qr7M7_Lb9F7FW_4OuFS6/view?usp=sharing"
+            target="_blank"
+          >
+            Resume
+          </Link>
         </div>
 
         <div
@@ -52,11 +75,14 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/30 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20">
-          <Link href="#" onClick={toggleMenu}>
+        <div
+          ref={menuRef}
+          className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/30 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20"
+        >
+          <Link href="/" onClick={toggleMenu}>
             About
           </Link>
-          <Link href="#" onClick={toggleMenu}>
+          <Link href="/projects" onClick={toggleMenu}>
             Projects
           </Link>
           <Link href="#" onClick={toggleMenu}>
@@ -64,6 +90,13 @@ export default function Navbar() {
           </Link>
           <Link href="#" onClick={toggleMenu}>
             Contact
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/1DjghVezG53l5qr7M7_Lb9F7FW_4OuFS6/view?usp=sharing"
+            target="_blank"
+            onClick={toggleMenu}
+          >
+            Resume
           </Link>
         </div>
       )}
