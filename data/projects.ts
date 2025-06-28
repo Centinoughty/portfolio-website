@@ -74,7 +74,16 @@ export const featured: Project[] = [
     image: "/temp.png",
     github: "https://github.com/Centinoughty",
     url: "https://minerva.nitc.ac.in",
-    tools: ["React", "NextJS", "ReduxJS", "FastAPI", "Docker", "PostgreSQL"],
+    tools: [
+      "React",
+      "NextJS",
+      "ReduxJS",
+      "FastAPI",
+      "ExpressJS",
+      "SocketIO",
+      "Docker",
+      "PostgreSQL",
+    ],
   },
   {
     name: "Null Pointer",
