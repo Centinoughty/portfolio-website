@@ -38,7 +38,7 @@ export default function Home() {
           <div className="md:mt-8">
             <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
               <img
-                src="/me.jpg"
+                src="/og-nadeem.jpg"
                 alt="Nadeem M Siyam"
                 className="object-cover"
               />
