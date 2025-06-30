@@ -37,11 +37,15 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-[10vw]">
           <div className="md:mt-8">
             <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
-              <img
-                src="/og-nadeem.jpg"
-                alt="Nadeem M Siyam"
-                className="object-cover"
-              />
+              <picture>
+                <source srcSet="/og-nadeem.webp" type="image/webp" />
+                <img
+                  src="/og-nadeem.jpg"
+                  alt="Nadeem M Siyam"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
           <div className="lg:max-w-lg xl:max-w-xl flex flex-col gap-8">

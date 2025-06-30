@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://nadeemsiyam.com/og-nadeem.png",
+        url: "https://nadeemsiyam.com/og-nadeem.webp",
         width: 1200,
         height: 630,
         alt: "Nadeem M Siyam Portfolio Preview",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer, AI/ML and DevOps Enthusiast. Discover my work.",
     creator: "@NadeemSiyam",
-    images: ["https://nadeemsiyam.com/og-nadeem.png"],
+    images: ["https://nadeemsiyam.com/og-nadeem.webp"],
   },
 };
 
