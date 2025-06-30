@@ -53,15 +53,15 @@ export default function ExperienceSection() {
                 }}
               >
                 <div>
-                  <h4 className="font-bold text-[var(--accent)] text-[4.2vw] sm:text-[3vw] md:text-[2.4vw] lg:text-[1.8vw] xl:text-[1.1vw]">
+                  <h3 className="font-bold text-[var(--accent)] text-[4.2vw] sm:text-[3vw] md:text-[2.4vw] lg:text-[1.8vw] xl:text-[1.1vw]">
                     {exp.company}
-                  </h4>
-                  <h5 className="text-white/70 text-[3.9vw] sm:text-[2.4vw] md:text-[2vw] lg:text-[1.6vw] xl:text-[1vw]">
+                  </h3>
+                  <p className="text-white/70 text-[3.9vw] sm:text-[2.4vw] md:text-[2vw] lg:text-[1.6vw] xl:text-[1vw]">
                     {exp.role}
-                  </h5>
+                  </p>
                 </div>
                 <div className="font-semibold text-[var(--accent)]">
-                  <h5 className="text-nowrap">
+                  <p className="text-nowrap">
                     <TextDate date={exp.startDate} />{" "}
                     {exp.endDate ? (
                       <>
@@ -71,7 +71,7 @@ export default function ExperienceSection() {
                     ) : (
                       "~"
                     )}
-                  </h5>
+                  </p>
                 </div>
               </div>
             );

@@ -36,7 +36,10 @@ export default function FeatureCard({ feature }: { feature: Project }) {
                 {feature.name}
               </h3>
             )}
-            <Link href={feature.github ?? ""}>
+            <Link
+              href={feature.github ?? ""}
+              aria-label={`Github repo of: ${feature.name}`}
+            >
               <FaGithub
                 className={`${!feature.github && "hidden"} text-[3.2vh]`}
               />

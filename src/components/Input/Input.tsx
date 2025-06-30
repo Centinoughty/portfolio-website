@@ -23,12 +23,14 @@ export default forwardRef(function Input(
         </span>
         {textarea ? (
           <textarea
+            name={props.title}
             ref={ref as React.RefObject<HTMLTextAreaElement>}
             required
             className={`${className} h-[100px] resize-none`}
           ></textarea>
         ) : (
           <input
+            name={props.title}
             ref={ref as React.RefObject<HTMLInputElement>}
             type={props.type}
             required

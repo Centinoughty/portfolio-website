@@ -15,7 +15,12 @@ export default function ProjectCard({ project }: { project: Project }) {
           </h4>
           <div className="flex items-center underline text-[3.2vh]">
             {project.github && (
-              <Link href={project.github} target="_blank" className="p-1">
+              <Link
+                href={project.github}
+                target="_blank"
+                aria-label={project.name}
+                className="p-1"
+              >
                 <FaGithub />
               </Link>
             )}
