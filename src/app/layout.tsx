@@ -28,9 +28,6 @@ export const metadata: Metadata = {
     follow: true,
     nocache: false,
   },
-  icons: {
-    icon: "/logo.svg",
-  },
   openGraph: {
     title: "Nadeem M Siyam | Full Stack & Software Engineer",
     description:
