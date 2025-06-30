@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const logos = [
   "/logo/react.svg",
   "/logo/redux.svg",
@@ -30,11 +32,12 @@ export default function SkillsGrid() {
     <>
       <div className="px-2 flex flex-wrap gap-x-[13px] gap-y-5 md:gap-5">
         {logos.map((logo, idx) => (
-          <img
+          <Image
             key={idx}
             src={logo}
             alt={logo.split("/")[2].split(".")[0]}
-            className="h-10"
+            width={40}
+            height={40}
           />
         ))}
       </div>

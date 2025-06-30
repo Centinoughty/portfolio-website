@@ -79,20 +79,25 @@ export default function Navbar() {
           ref={menuRef}
           className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/30 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20"
         >
-          <Link href="/" onClick={toggleMenu}>
+          <Link href="/" aria-label="About Section" onClick={toggleMenu}>
             About
           </Link>
-          <Link href="/projects" onClick={toggleMenu}>
+          <Link
+            href="/projects"
+            aria-label="Projects page"
+            onClick={toggleMenu}
+          >
             Projects
           </Link>
-          <Link href="#" onClick={toggleMenu}>
+          <Link href="#" aria-label="Play page" onClick={toggleMenu}>
             Play
           </Link>
-          <Link href="#" onClick={toggleMenu}>
+          <Link href="#" aria-label="Contact section" onClick={toggleMenu}>
             Contact
           </Link>
           <Link
             href="https://drive.google.com/file/d/1DjghVezG53l5qr7M7_Lb9F7FW_4OuFS6/view?usp=sharing"
+            aria-label="My Resume"
             target="_blank"
             onClick={toggleMenu}
           >

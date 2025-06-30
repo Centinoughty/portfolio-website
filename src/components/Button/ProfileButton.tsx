@@ -9,7 +9,12 @@ interface ProfileButtonProps {
 export default function ProfileButton({ href, children }: ProfileButtonProps) {
   return (
     <>
-      <Link href={href} rel="" target="_blank">
+      <Link
+        href={href}
+        rel=""
+        aria-label={href.split("//")[1].split(".")[0]}
+        target="_blank"
+      >
         {children}
       </Link>
     </>

@@ -8,23 +8,24 @@ export default function FeatureCard({ feature }: { feature: Project }) {
   return (
     <>
       <div>
-        <div className="mb-2 relative">
+        <div className="mb-2 relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px]">
           <Image
             src={feature.image || ""}
             alt={feature.name}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full object-cover"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover w-full h-full"
             style={{ boxShadow: "0px 0px 6px rgba(1, 1, 1, 0.6)" }}
           />
-          <div className="absolute w-full h-full inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
+
         <div>
           <div className="flex justify-between items-center">
             {feature.url ? (
               <Link
                 href={feature.url}
+                aria-label={`Url for ${feature.name}`}
                 className="className={`${bric.className} text-[var(--primary-color)] font-bold text-[7vw] md:text-[4.4vw] lg:text-[3.2vw] xl:text-[2.6vw]`}"
               >
                 {feature.name}

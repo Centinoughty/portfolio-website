@@ -67,7 +67,11 @@ export default function RootLayout({
           name="google-site-verification"
           content="FucCzmuCzs8dQQrVB-P_g0CIprT8LjT1eUFSwO4on2M"
         />
-        <link rel="canonical" href="https://nadeemsiyam.com" />
+        <link
+          rel="canonical"
+          aria-label="my website"
+          href="https://nadeemsiyam.com"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

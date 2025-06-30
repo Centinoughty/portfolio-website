@@ -1,14 +1,18 @@
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
 import { featured, projects } from "../../data/projects";
-import ProjectCard from "@/components/Card/ProjectCard";
-import FeatureCard from "@/components/Card/FeatureCard";
 import Link from "next/link";
-import ContactCard from "@/components/Card/ContactCard";
-import ConnectCard from "@/components/Card/ConnectCard";
-import Heading from "@/components/Text/Heading";
-import SkillsGrid from "@/components/Grid/SkillsGrid";
-import ExperienceSection from "@/components/Section/ExperienceSection";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+const Heading = dynamic(() => import("@//components/Text/Heading"));
+const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"));
+const FeatureCard = dynamic(() => import("@/components/Card/FeatureCard"));
+const ContactCard = dynamic(() => import("@/components/Card/ContactCard"));
+const ConnectCard = dynamic(() => import("@/components/Card/ConnectCard"));
+const SkillsGrid = dynamic(() => import("@/components/Grid/SkillsGrid"));
+const ExperienceSection = dynamic(
+  () => import("@/components/Section/ExperienceSection")
+);
 
 export default function Home() {
   return (
@@ -36,16 +40,15 @@ export default function Home() {
         <Title text="About Me" />
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-[10vw]">
           <div className="md:mt-8">
-            <div className="w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
-              <picture>
-                <source srcSet="/og-nadeem.webp" type="image/webp" />
-                <img
-                  src="/og-nadeem.jpg"
-                  alt="Nadeem M Siyam"
-                  className="object-cover"
-                  loading="lazy"
-                />
-              </picture>
+            <div className="relative w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
+              <Image
+                src="/og-nadeem.jpg"
+                alt="Nadeem M Siyam"
+                fill
+                sizes="(min-width: 768px) 310px, 280px"
+                className="object-cover rounded-full"
+                priority
+              />
             </div>
           </div>
           <div className="lg:max-w-lg xl:max-w-xl flex flex-col gap-8">
@@ -102,6 +105,7 @@ export default function Home() {
         <div className="md:mx-[3%] mt-6 md:mt-8 flex justify-end">
           <Link
             href="/projects"
+            aria-label="Link to profile page"
             className={`${fira.className} font-semibold underline underline-offset-2 text-[var(--primary-color)] text-[4vw] sm:text-[3.4vw] md:text-[2.2vw] lg:text-[1.6vw] xl:text-[1vw]`}
           >
             see all projects

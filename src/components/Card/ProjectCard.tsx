@@ -8,11 +8,11 @@ export default function ProjectCard({ project }: { project: Project }) {
     <>
       <div className="mx-auto p-4 max-w-md flex flex-col gap-3 rounded-lg shadow-md">
         <div className="mb-3 flex justify-between items-center gap-1">
-          <h4
+          <h3
             className={`${bric.className} text-[var(--primary-color)] font-bold text-[6vw] md:text-[4vw] lg:text-[2.25vw] xl:text-[1.5vw]`}
           >
             {project.name}
-          </h4>
+          </h3>
           <div className="flex items-center underline text-[3.2vh]">
             {project.github && (
               <Link
@@ -25,7 +25,12 @@ export default function ProjectCard({ project }: { project: Project }) {
               </Link>
             )}
             {project.url && (
-              <Link href={project.url} target="_blank" className="p-1">
+              <Link
+                href={project.url}
+                target="_blank"
+                aria-label="arrow up right"
+                className="p-1"
+              >
                 <GoArrowUpRight />
               </Link>
             )}
@@ -34,7 +39,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className={`${mont.className} tracking-wide`}>
           {project.description}
         </p>
-        <ul className="font-mono flex flex-wrap gap-2 text-gray-500">
+        <ul className="font-mono flex flex-wrap gap-2 text-gray-800">
           {project.tools.map((tool, idx) => (
             <li key={idx}>{tool}</li>
           ))}
