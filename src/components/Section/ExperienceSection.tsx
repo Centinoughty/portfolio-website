@@ -1,51 +1,82 @@
+"use client";
+
 import { bric } from "@/styles/fonts";
 import { experience } from "../../../data/experience";
+import { useEffect, useRef, useState } from "react";
+import TextDate from "../Text/TextDate";
 
 export default function ExperienceSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+        setContainerHeight(containerRef.current.offsetHeight);
+      }
+    };
+
+    updateSize();
+    const observer = new ResizeObserver(updateSize);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div
-      className={`${bric.className} flex flex-col items-center gap-8 w-full max-w-7xl mx-auto py-10 px-4`}
-    >
-      {[...experience].reverse().map((exp, idx) => (
-        <div
-          key={idx}
-          className="flex justify-between gap-4 md:gap-12 w-full relative"
-        >
-          <div className="min-w-[120px] w-1/3">
-            <h3 className="text-[6vw] sm:text-[6vw] md:text-[4vw] lg:text-[2.5vw] xl:text-[1.8vw] font-semibold text-[var(--primary-color)]">
-              {exp.work}
-            </h3>
-            <p className="xl:text-[1.2vw] font-medium text-[var(--secondary-color)]">
-              {exp.company}
-            </p>
-            <p className="xl:text-[1.2vw] text-[var(--secondary-color)]">
-              {exp.startMonth} {exp.startYear} -{" "}
-              {exp.endMonth ? exp.endMonth : "Present"}{" "}
-              {exp.endMonth && exp.endYear}
-            </p>
-          </div>
+    <>
+      <div
+        ref={containerRef}
+        className="md:mx-[3%] flex flex-col items-center gap-2 md:relative md:h-[400px]"
+      >
+        {containerWidth > 0 &&
+          [...experience].reverse().map((exp, idx) => {
+            const numSlots = experience.length - 1;
+            const blockWidth = 500;
+            const blockHeight = 85;
+            const leftPx = (idx / numSlots) * (containerWidth - blockWidth);
+            const topPx = (idx / numSlots) * (containerHeight - blockHeight);
 
-          <div className="relative flex flex-col items-center">
-            <div className="w-9 h-9 rounded-full border-3 border-dashed border-gray-500 flex items-center justify-center">
-              <div className="w-6 h-6 rounded-full bg-[var(--primary-color)]"></div>
-            </div>
-            {idx < experience.length - 1 && (
-              <div className="absolute top-10 left-1/2 -translate-x-1/2 w-px h-[98%] border-l-3 border-dashed border-gray-400 z-0" />
-            )}
-          </div>
-
-          <div className="w-1/3">
-            <h3 className="text-[6vw] sm:text-[6vw] md:text-[4vw] lg:text-[2.5vw] xl:text-[1.8vw] font-semibold">
-              {exp.role}
-            </h3>
-            {exp.description && (
-              <p className="text-[var(--secondary-color)] text-lg mt-2 leading-relaxed">
-                {exp.description}
-              </p>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
+            return (
+              <div
+                key={idx}
+                className={`md:absolute bg-[var(--primary-color)] px-8 py-3 rounded-full flex justify-between items-center ${bric.className}`}
+                style={{
+                  right: `${leftPx}px`,
+                  top: `${topPx}px`,
+                  width: `100%`,
+                  maxWidth: "500px",
+                }}
+              >
+                <div>
+                  <h4 className="font-bold text-[var(--accent)] text-[4.2vw] sm:text-[3vw] md:text-[2.4vw] lg:text-[1.8vw] xl:text-[1.1vw]">
+                    {exp.company}
+                  </h4>
+                  <h5 className="text-white/70 text-[3.9vw] sm:text-[2.4vw] md:text-[2vw] lg:text-[1.6vw] xl:text-[1vw]">
+                    {exp.role}
+                  </h5>
+                </div>
+                <div className="font-semibold text-[var(--accent)]">
+                  <h5 className="text-nowrap">
+                    <TextDate date={exp.startDate} />{" "}
+                    {exp.endDate ? (
+                      <>
+                        {" - "}
+                        <TextDate date={exp.endDate} />
+                      </>
+                    ) : (
+                      "~"
+                    )}
+                  </h5>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </>
   );
 }

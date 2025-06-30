@@ -1,6 +1,8 @@
 import { bric, mont } from "@/styles/fonts";
 import Image from "next/image";
 import Skill from "../Text/Skill";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 export default function FeatureCard({ feature }: { feature: Project }) {
   return (
@@ -19,11 +21,27 @@ export default function FeatureCard({ feature }: { feature: Project }) {
           <div className="absolute w-full h-full inset-0 bg-black/20"></div>
         </div>
         <div>
-          <h3
-            className={`${bric.className} text-[var(--primary-color)] font-bold text-[7vw] md:text-[4.4vw] lg:text-[3.2vw] xl:text-[2.6vw]`}
-          >
-            {feature.name}
-          </h3>
+          <div className="flex justify-between items-center">
+            {feature.url ? (
+              <Link
+                href={feature.url}
+                className="className={`${bric.className} text-[var(--primary-color)] font-bold text-[7vw] md:text-[4.4vw] lg:text-[3.2vw] xl:text-[2.6vw]`}"
+              >
+                {feature.name}
+              </Link>
+            ) : (
+              <h3
+                className={`${bric.className} text-[var(--primary-color)] font-bold text-[7vw] md:text-[4.4vw] lg:text-[3.2vw] xl:text-[2.6vw]`}
+              >
+                {feature.name}
+              </h3>
+            )}
+            <Link href={feature.github ?? ""}>
+              <FaGithub
+                className={`${!feature.github && "hidden"} text-[3.2vh]`}
+              />
+            </Link>
+          </div>
           <p className={`${mont.className} tracking-wide px-2`}>
             {feature.description}
           </p>

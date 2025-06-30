@@ -1,7 +1,7 @@
 import { bric, mont } from "@/styles/fonts";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
-import { LuCodeXml } from "react-icons/lu";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -13,10 +13,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           >
             {project.name}
           </h4>
-          <div className="flex items-center gap-2 underline text-[3.2vh]">
+          <div className="flex items-center underline text-[3.2vh]">
             {project.github && (
               <Link href={project.github} target="_blank" className="p-1">
-                <LuCodeXml />
+                <FaGithub />
               </Link>
             )}
             {project.url && (

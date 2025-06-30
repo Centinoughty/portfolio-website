@@ -3,10 +3,8 @@ interface Experience {
   role: string;
   work: string;
   description: string;
-  startMonth: string;
-  startYear: number;
-  endMonth?: string;
-  endYear?: number;
+  startDate: string;
+  endDate?: string;
   url?: string;
   skills?: string[];
 }

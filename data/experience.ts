@@ -1,14 +1,23 @@
 export const experience: Experience[] = [
   {
+    company: "Pediaverse",
+    role: "Product Developer",
+    work: "Minerva",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+    startDate: "Dec 2024",
+    endDate: "Feb 2025",
+    skills: [],
+    url: "https://minerva.nitc.ac.in",
+  },
+  {
     company: "CSED NITC",
     role: "Developer",
     work: "Minerva",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
-    startMonth: "Dec",
-    startYear: 2024,
-    endMonth: "Feb",
-    endYear: 2025,
+    startDate: "Dec 2024",
+    endDate: "Feb 2025",
     skills: [],
     url: "https://minerva.nitc.ac.in",
   },
@@ -18,10 +27,8 @@ export const experience: Experience[] = [
     work: "Hostel Website",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
-    startMonth: "Jan",
-    startYear: 2025,
-    endMonth: "",
-    endYear: 0,
+    startDate: "Jan 2025",
+    endDate: "",
     skills: [],
     url: "",
   },
@@ -31,10 +38,8 @@ export const experience: Experience[] = [
     work: "Elevate",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
-    startMonth: "Jul",
-    startYear: 2025,
-    endMonth: "",
-    endYear: 0,
+    startDate: "Jul 2025",
+    endDate: "",
     skills: [],
     url: "",
   },
