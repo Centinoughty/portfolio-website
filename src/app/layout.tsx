@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "React Developer",
     "Next.js Portfolio",
   ],
+  icons: {
+    icon: "icon.svg",
+  },
   creator: "Nadeem M Siyam",
   authors: [{ name: "Nadeem M Siyam", url: "https://nadeemsiyam.com" }],
   robots: {
