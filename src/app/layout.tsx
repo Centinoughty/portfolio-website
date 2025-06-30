@@ -13,21 +13,28 @@ export const metadata: Metadata = {
   keywords: [
     "Nadeem M Siyam",
     "Full Stack Developer",
+    "Software Engineer",
     "AI ML Engineer",
     "Web Developer Portfolio from Kottayam",
-    "Networking",
+    "DevOps Engineer",
+    "Cybersecurity",
+    "React Developer",
+    "Next.js Portfolio",
   ],
   creator: "Nadeem M Siyam",
   authors: [{ name: "Nadeem M Siyam", url: "https://nadeemsiyam.com" }],
   robots: {
     index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
+  },
+  icons: {
+    icon: "/logo.svg",
   },
   openGraph: {
-    title: "Nadeem M Siyam",
+    title: "Nadeem M Siyam | Full Stack & Software Engineer",
     description:
-      "Explore my portfolio: Full Stack, AI/ML, DevOps, and more. Discover my projects and blog.",
+      "Explore Nadeem's work in Full Stack, AI/ML, DevOps and cybersecurity. Built using cutting-edge technologies.",
     url: "https://nadeemsiyam.com",
     siteName: "Nadeem M Siyam",
     type: "website",
@@ -37,14 +44,15 @@ export const metadata: Metadata = {
         url: "https://nadeemsiyam.com/og-nadeem.png",
         width: 1200,
         height: 630,
-        alt: "Nadeem M Siyam Preview",
+        alt: "Nadeem M Siyam Portfolio Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nadeem M Siyam Portfolio",
-    description: "Full Stack & AI Developer. Explore my work, blog, and more.",
+    description:
+      "Full Stack Developer, AI/ML and DevOps Enthusiast. Discover my work.",
     creator: "@NadeemSiyam",
     images: ["https://nadeemsiyam.com/og-nadeem.png"],
   },
@@ -62,6 +70,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="FucCzmuCzs8dQQrVB-P_g0CIprT8LjT1eUFSwO4on2M"
         />
+        <link rel="canonical" href="https://nadeemsiyam.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -77,20 +86,20 @@ export default function RootLayout({
                 "https://www.instagram.com/_nad_eee_",
               ],
               jobTitle:
-                "Software Engineer, DevOps Engineer, Full Stack Developer",
+                "Software Engineer, Full Stack Developer, DevOps Engineer",
               worksFor: {
                 "@type": "Organization",
-                name: "Open Source & Freelance",
+                name: "Freelance / Open Source",
               },
             }),
           }}
         />
       </Head>
+
       <body className="antialiased bg-[var(--accent)]">
         <Navbar />
         {children}
         <Footer />
-
         <Analytics />
       </body>
     </html>
