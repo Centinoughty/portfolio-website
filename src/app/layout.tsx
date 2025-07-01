@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Next.js Portfolio",
   ],
   icons: {
-    icon: "icon.svg",
+    icon: "favicon.ico",
   },
   creator: "Nadeem M Siyam",
   authors: [{ name: "Nadeem M Siyam", url: "https://nadeemsiyam.com" }],

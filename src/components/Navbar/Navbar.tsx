@@ -42,7 +42,7 @@ export default function Navbar() {
           <Link href="#">Play</Link>
           <Link href="#">Contact</Link>
           <Link
-            href="https://drive.google.com/file/d/1DjghVezG53l5qr7M7_Lb9F7FW_4OuFS6/view?usp=sharing"
+            href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"
             target="_blank"
           >
             Resume
@@ -96,7 +96,7 @@ export default function Navbar() {
             Contact
           </Link>
           <Link
-            href="https://drive.google.com/file/d/1DjghVezG53l5qr7M7_Lb9F7FW_4OuFS6/view?usp=sharing"
+            href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"
             aria-label="My Resume"
             target="_blank"
             onClick={toggleMenu}
