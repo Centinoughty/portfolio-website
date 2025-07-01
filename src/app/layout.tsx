@@ -70,6 +70,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="FucCzmuCzs8dQQrVB-P_g0CIprT8LjT1eUFSwO4on2M"
         />
+        <link rel="icon" href="favicon.ico" />
         <link
           rel="canonical"
           aria-label="my website"
