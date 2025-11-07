@@ -77,7 +77,7 @@ export default function Navbar() {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/30 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-20"
+          className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/20 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-50"
         >
           <Link href="/" aria-label="About Section" onClick={toggleMenu}>
             About
