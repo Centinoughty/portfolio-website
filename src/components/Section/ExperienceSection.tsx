@@ -1,56 +1,15 @@
 "use client";
 
 import { bric } from "@/styles/fonts";
+import { experience } from "../../../data/experience";
 import { useEffect, useRef, useState } from "react";
-import TextDate from "../Text/TextDate"; // Adjust path if needed
-
-interface Experience {
-  _id: string;
-  company: string;
-  role: string;
-  startDate: string; // ISO String from DB
-  endDate?: string;  // ISO String from DB
-}
+import TextDate from "../Text/TextDate";
 
 export default function ExperienceSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
-  
-  const [experiences, setExperiences] = useState<Experience[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  // Helper: Convert MongoDB ISO date to "MMM YYYY" (e.g., "Jan 2024")
-  const formatDate = (isoString: string) => {
-    if (!isoString) return "";
-    const date = new Date(isoString);
-    // 'short' gives "Jan", "Feb", etc.
-    const month = date.toLocaleString('default', { month: 'short' });
-    const year = date.getFullYear();
-    return `${month} ${year}`;
-  };
-
-  // 1. Fetch Data
-  useEffect(() => {
-    const fetchExperience = async () => {
-      try {
-        const res = await fetch("/api/experience", {
-            next: { revalidate: 0 } 
-        });
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setExperiences(data);
-      } catch (error) {
-        console.error("Error loading experiences:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchExperience();
-  }, []);
-
-  // 2. Resize Logic
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
@@ -68,8 +27,6 @@ export default function ExperienceSection() {
     return () => observer.disconnect();
   }, []);
 
-  if (loading) return null; // Or a loading skeleton
-
   return (
     <>
       <div
@@ -77,21 +34,16 @@ export default function ExperienceSection() {
         className="md:mx-[3%] flex flex-col items-center gap-2 md:relative md:h-[400px]"
       >
         {containerWidth > 0 &&
-          experiences.map((exp, idx) => {
-            // Logic to calculate position
-            const numSlots = experiences.length > 1 ? experiences.length - 1 : 1;
+          [...experience].reverse().map((exp, idx) => {
+            const numSlots = experience.length - 1;
             const blockWidth = 500;
             const blockHeight = 85;
-            
-            // Safety check for ratio
-            const ratio = experiences.length > 1 ? idx / numSlots : 0;
-
-            const leftPx = ratio * (containerWidth - blockWidth);
-            const topPx = ratio * (containerHeight - blockHeight);
+            const leftPx = (idx / numSlots) * (containerWidth - blockWidth);
+            const topPx = (idx / numSlots) * (containerHeight - blockHeight);
 
             return (
               <div
-                key={exp._id}
+                key={idx}
                 className={`md:absolute bg-[var(--primary-color)] px-8 py-3 rounded-full flex justify-between items-center ${bric.className}`}
                 style={{
                   right: `${leftPx}px`,
@@ -109,17 +61,15 @@ export default function ExperienceSection() {
                   </p>
                 </div>
                 <div className="font-semibold text-[var(--accent)]">
-                  <p className="text-nowrap flex items-center gap-1">
-                    {/* Format the date before passing to TextDate */}
-                    <TextDate date={formatDate(exp.startDate)} />
-                    
+                  <p className="text-nowrap">
+                    <TextDate date={exp.startDate} />{" "}
                     {exp.endDate ? (
                       <>
-                        <span>-</span>
-                        <TextDate date={formatDate(exp.endDate)} />
+                        {" - "}
+                        <TextDate date={exp.endDate} />
                       </>
                     ) : (
-                      <span>~</span>
+                      "~"
                     )}
                   </p>
                 </div>
