@@ -1,9 +1,7 @@
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
+import ClientLayout from "./clientLayout";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nadeemsiyam.com"),
@@ -101,12 +99,7 @@ export default function RootLayout({
         />
       </Head>
 
-      <body className="antialiased bg-[var(--accent)]">
-        <Navbar />
-        {children}
-        <Footer />
-        <Analytics />
-      </body>
+      <ClientLayout>{children}</ClientLayout>
     </html>
   );
 }
