@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ImageUpload from "@/app/admin/components/ImageUpload";
 import { Plus, Trash2 } from "lucide-react";
 
 export default function GalleryPage() {
@@ -40,30 +41,43 @@ export default function GalleryPage() {
 
       <form
         onSubmit={handleAdd}
-        className="flex gap-4 mb-8 p-4 rounded-xl bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/20"
+        className="mb-8 p-6 rounded-xl bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/20"
       >
-        <input
-          type="text"
-          placeholder="Title / Caption"
-          required
-          value={newImage.title}
-          onChange={(e) => setNewImage({ ...newImage, title: e.target.value })}
-          className="flex-1 p-2 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30"
-        />
-        <input
-          type="text"
-          placeholder="Image URL"
-          required
-          value={newImage.image}
-          onChange={(e) => setNewImage({ ...newImage, image: e.target.value })}
-          className="flex-1 p-2 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30"
-        />
-        <button
-          type="submit"
-          className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-background)] rounded flex items-center gap-2"
-        >
-          <Plus size={18} /> Add
-        </button>
+        <h3 className="text-lg font-semibold mb-4">Add New Image</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium mb-2 opacity-80">
+              Image Title
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. Hiking Trip"
+              required
+              value={newImage.title}
+              onChange={(e) =>
+                setNewImage({ ...newImage, title: e.target.value })
+              }
+              className="w-full p-3 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30"
+            />
+          </div>
+
+          <div>
+            <ImageUpload
+              value={newImage.image}
+              onChange={(url) => setNewImage({ ...newImage, image: url })}
+              label="Upload Photo"
+            />
+          </div>
+        </div>
+
+        <div className="mt-4 flex justify-end">
+          <button
+            type="submit"
+            className="px-6 py-2 bg-[var(--color-primary)] text-[var(--color-background)] rounded flex items-center gap-2"
+          >
+            <Plus size={18} /> Add to Gallery
+          </button>
+        </div>
       </form>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

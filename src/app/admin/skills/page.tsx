@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ImageUpload from "@/app/admin/components/ImageUpload";
 import { Plus, Trash2 } from "lucide-react";
 
 export default function SkillsPage() {
@@ -39,27 +40,31 @@ export default function SkillsPage() {
 
       <form
         onSubmit={handleAdd}
-        className="flex gap-4 mb-8 p-4 rounded-xl bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/20"
+        className="flex flex-col md:flex-row gap-4 mb-8 p-4 rounded-xl bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/20 items-end"
       >
-        <input
-          type="text"
-          placeholder="Skill Name (e.g. React)"
-          required
-          value={newSkill.name}
-          onChange={(e) => setNewSkill({ ...newSkill, name: e.target.value })}
-          className="flex-1 p-2 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30"
-        />
-        <input
-          type="text"
-          placeholder="Icon URL"
-          required
-          value={newSkill.image}
-          onChange={(e) => setNewSkill({ ...newSkill, image: e.target.value })}
-          className="flex-1 p-2 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30"
-        />
+        <div className="flex-1 w-full">
+          <label className="text-xs opacity-70 mb-1 block">Skill Name</label>
+          <input
+            type="text"
+            placeholder="e.g. React"
+            required
+            value={newSkill.name}
+            onChange={(e) => setNewSkill({ ...newSkill, name: e.target.value })}
+            className="w-full p-2 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30 h-[42px]"
+          />
+        </div>
+
+        <div className="w-full md:w-64">
+          <ImageUpload
+            value={newSkill.image}
+            onChange={(url) => setNewSkill({ ...newSkill, image: url })}
+            label="Icon"
+          />
+        </div>
+
         <button
           type="submit"
-          className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-background)] rounded flex items-center gap-2"
+          className="h-[42px] px-6 bg-[var(--color-primary)] text-[var(--color-background)] rounded flex items-center gap-2 font-medium"
         >
           <Plus size={18} /> Add
         </button>

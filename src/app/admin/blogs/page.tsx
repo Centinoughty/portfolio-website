@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ImageUpload from "@/app/admin/components/ImageUpload";
 import { Plus, Save } from "lucide-react";
 
 export default function BlogsPage() {
@@ -97,15 +98,13 @@ export default function BlogsPage() {
             />
 
             <div className="grid grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Cover Image URL"
-                value={formData.image}
-                onChange={(e) =>
-                  setFormData({ ...formData, image: e.target.value })
-                }
-                className="p-3 rounded bg-[var(--color-background)] border border-[var(--color-secondary)]/30"
-              />
+              <div className="col-span-2">
+                <ImageUpload
+                  value={formData.image}
+                  onChange={(url) => setFormData({ ...formData, image: url })}
+                  label="Blog Cover Image"
+                />
+              </div>
               <input
                 type="date"
                 value={formData.date}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import ImageUpload from "@/app/admin/components/ImageUpload";
 import {
   Plus,
   Edit2,
@@ -193,17 +194,13 @@ export default function ProjectsPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 opacity-80">
-                Image URL
-              </label>
-              <input
-                type="text"
-                value={formData.image}
-                onChange={(e) =>
-                  setFormData({ ...formData, image: e.target.value })
-                }
-                className="w-full px-4 py-2 rounded-lg bg-[var(--color-background)] border border-[var(--color-secondary)]/30 focus:border-[var(--color-primary)] outline-none"
-              />
+              <div className="col-span-1">
+                <ImageUpload
+                  value={formData.image}
+                  onChange={(url) => setFormData({ ...formData, image: url })}
+                  label="Project Thumbnail"
+                />
+              </div>
             </div>
 
             <div>
