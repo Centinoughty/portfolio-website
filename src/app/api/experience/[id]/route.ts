@@ -4,9 +4,9 @@ import Experience from "@/../models/Experience";
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const { id } = params;
+  const { id } = await params;
   const body = await req.json();
   await connectToDatabase();
   const updated = await Experience.findByIdAndUpdate(id, body, { new: true });
@@ -15,9 +15,9 @@ export async function PUT(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const { id } = params;
+  const { id } = await params;
   await connectToDatabase();
   await Experience.findByIdAndDelete(id);
   return NextResponse.json({ message: "Deleted" });
