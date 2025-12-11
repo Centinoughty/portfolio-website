@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
-import ClientLayout from "./clientLayout";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nadeemsiyam.com"),
@@ -98,8 +100,12 @@ export default function RootLayout({
           }}
         />
       </Head>
-
-      <ClientLayout>{children}</ClientLayout>
+      <body className="antialiased bg-[var(--accent)]">
+        <Navbar />
+        {children}
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   );
 }
