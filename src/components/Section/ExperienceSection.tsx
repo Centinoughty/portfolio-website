@@ -3,7 +3,6 @@
 import { bric } from "@/styles/fonts";
 import { useEffect, useRef, useState } from "react";
 import TextDate from "../Text/TextDate";
-import axios from "axios";
 
 interface Experience {
   role: string;
@@ -12,25 +11,14 @@ interface Experience {
   endDate: Date;
 }
 
-export default function ExperienceSection() {
+interface ExperienceProps {
+  experiences: Experience[];
+}
+
+export default function ExperienceSection({ experiences }: ExperienceProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
-
-  const [experiences, setExperiences] = useState<Experience[]>([]);
-
-  const fetchExp = async () => {
-    try {
-      const res = await axios.get("https://admin.nadeemsiyam.com/api/experience");
-      setExperiences(res.data);
-    } catch (error) {
-      console.log("Fetching experiences failed");
-    }
-  };
-
-  useEffect(() => {
-    fetchExp();
-  }, []);
 
   useEffect(() => {
     const updateSize = () => {

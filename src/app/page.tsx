@@ -1,12 +1,9 @@
-"use client";
-
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import getHomeData from "@/lib/getHomeData";
 const Heading = dynamic(() => import("@//components/Text/Heading"));
 const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"));
 const FeatureCard = dynamic(() => import("@/components/Card/FeatureCard"));
@@ -17,31 +14,8 @@ const ExperienceSection = dynamic(
   () => import("@/components/Section/ExperienceSection")
 );
 
-export default function Home() {
-  const [featured, setFeatured] = useState<Project[]>([]);
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  const fetchProjects = async () => {
-    try {
-      const res = await axios.get("https://admin.nadeemsiyam.com/api/projects");
-
-      const allProjects: Project[] = res.data;
-
-      setFeatured(allProjects.filter((p) => p.featured));
-      setProjects(allProjects.filter((p) => !p.featured));
-    } catch (err) {
-      console.error("Failed to fetch projects", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
-  if (loading) return null;
+export default async function Home() {
+  const { projects, featured, experiences, skills } = await getHomeData();
 
   return (
     <>
@@ -96,7 +70,7 @@ export default function Home() {
             <div className="lg:max-w-lg xl:max-w-xl">
               <div className="flex flex-col gap-2">
                 <Heading text="skills" />
-                <SkillsGrid />
+                <SkillsGrid skills={skills} />
               </div>
             </div>
           </div>
@@ -107,7 +81,7 @@ export default function Home() {
 
       <section id="experience" className="mx-[5%]">
         <Title text="Experience" />
-        <ExperienceSection />
+        <ExperienceSection experiences={experiences} />
       </section>
 
       <div className="my-[12vh]"></div>
