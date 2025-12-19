@@ -1,14 +1,38 @@
 "use client";
 
 import { bric } from "@/styles/fonts";
-import { experience } from "../../../data/experience";
 import { useEffect, useRef, useState } from "react";
 import TextDate from "../Text/TextDate";
+import axios from "axios";
+
+interface Experience {
+  role: string;
+  company: string;
+  startDate: Date;
+  endDate: Date;
+}
 
 export default function ExperienceSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
+
+  const [experiences, setExperiences] = useState<Experience[]>([]);
+
+  const fetchExp = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/experience`
+      );
+      setExperiences(res.data);
+    } catch (error) {
+      console.log("Fetching experiences failed");
+    }
+  };
+
+  useEffect(() => {
+    fetchExp();
+  }, []);
 
   useEffect(() => {
     const updateSize = () => {
@@ -34,8 +58,8 @@ export default function ExperienceSection() {
         className="md:mx-[3%] flex flex-col items-center gap-2 md:relative md:h-[400px]"
       >
         {containerWidth > 0 &&
-          [...experience].reverse().map((exp, idx) => {
-            const numSlots = experience.length - 1;
+          experiences.reverse().map((exp, idx) => {
+            const numSlots = experiences.length - 1;
             const blockWidth = 500;
             const blockHeight = 85;
             const leftPx = (idx / numSlots) * (containerWidth - blockWidth);

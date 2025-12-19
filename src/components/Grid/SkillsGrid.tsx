@@ -1,41 +1,43 @@
 "use client";
 
+import axios from "axios";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-const logos = [
-  "/logo/react.svg",
-  "/logo/redux.svg",
-  "/logo/next.svg",
-  "/logo/tailwindcss.svg",
-  "/logo/threejs.svg",
-  "/logo/node.svg",
-  "/logo/express.svg",
-  "/logo/flask.svg",
-  "/logo/fastapi.svg",
-  "/logo/socketio.svg",
-  "/logo/mysql.svg",
-  "/logo/mongodb.svg",
-  "/logo/postgresql.svg",
-  "/logo/docker.svg",
-  "/logo/linux.svg",
-  "/logo/git.svg",
-  "/logo/bash.svg",
-  "/logo/nginx.svg",
-  "/logo/azure.svg",
-  "/logo/firebase.svg",
-  "/logo/pandas.svg",
-  "/logo/ansible.svg",
-];
+interface Skill {
+  _id: string;
+  name: string;
+  image: string;
+}
 
 export default function SkillsGrid() {
+  const [skills, setSkills] = useState<Skill[]>([]);
+
+  const fetchSkills = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/skills`
+      );
+
+      console.log(res.data);
+      setSkills(res.data);
+    } catch (error) {
+      console.log("Fetching skills failed");
+    }
+  };
+
+  useEffect(() => {
+    fetchSkills();
+  }, []);
+
   return (
     <>
       <div className="px-2 flex flex-wrap gap-x-[13px] gap-y-5 md:gap-5">
-        {logos.map((logo, idx) => (
+        {skills.map((skill: any) => (
           <Image
-            key={idx}
-            src={logo}
-            alt={logo.split("/")[2].split(".")[0]}
+            key={skill._id}
+            src={skill.image}
+            alt={skill.name}
             width={40}
             height={40}
           />
