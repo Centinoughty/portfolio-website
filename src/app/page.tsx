@@ -2,7 +2,6 @@
 
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
-// import { featured, projects } from "../../data/projects";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
