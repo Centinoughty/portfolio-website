@@ -15,7 +15,7 @@ export default function SkillsGrid() {
 
   const fetchSkills = async () => {
     try {
-      const res = await axios.get("admin.nadeemsiyam.com/api/skills");
+      const res = await axios.get("https://admin.nadeemsiyam.com/api/skills");
 
       console.log(res.data);
       setSkills(res.data);

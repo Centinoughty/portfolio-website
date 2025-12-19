@@ -24,7 +24,7 @@ export default function Home() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("admin.nadeemsiyam.com/api/projects");
+      const res = await axios.get("https://admin.nadeemsiyam.com/api/projects");
 
       const allProjects: Project[] = res.data;
 

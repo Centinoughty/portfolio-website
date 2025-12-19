@@ -13,7 +13,7 @@ export default function ContactCard() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    await axios.post("admin.nadeemsiyam.com/api/message", {
+    await axios.post("https://admin.nadeemsiyam.com/api/message", {
       name: nameRef.current?.value,
       email: emailRef.current?.value,
       message: messageRef.current?.value,
