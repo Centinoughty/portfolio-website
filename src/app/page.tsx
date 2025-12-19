@@ -1,9 +1,13 @@
+"use client";
+
 import { bric, fira } from "@/styles/fonts";
 import Title from "@/components/Text/Title";
-import { featured, projects } from "../../data/projects";
+// import { featured, projects } from "../../data/projects";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const Heading = dynamic(() => import("@//components/Text/Heading"));
 const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"));
 const FeatureCard = dynamic(() => import("@/components/Card/FeatureCard"));
@@ -15,6 +19,33 @@ const ExperienceSection = dynamic(
 );
 
 export default function Home() {
+  const [featured, setFeatured] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const fetchProjects = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/projects`
+      );
+
+      const allProjects: Project[] = res.data;
+
+      setFeatured(allProjects.filter((p) => p.featured));
+      setProjects(allProjects.filter((p) => !p.featured));
+    } catch (err) {
+      console.error("Failed to fetch projects", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  if (loading) return null;
+
   return (
     <>
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">

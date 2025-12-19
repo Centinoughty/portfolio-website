@@ -10,7 +10,7 @@ export default function FeatureCard({ feature }: { feature: Project }) {
       <div>
         <div className="mb-2 relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px]">
           <Image
-            src={feature.image || ""}
+            src={feature.image!}
             alt={feature.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

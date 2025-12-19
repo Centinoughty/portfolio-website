@@ -4,6 +4,6 @@ interface Project {
   tools: string[];
   github?: string;
   url?: string;
-  role?: string;
+  featured: boolean;
   image?: string;
 }
