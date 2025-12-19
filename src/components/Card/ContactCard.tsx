@@ -3,14 +3,21 @@
 import { FormEvent, useRef } from "react";
 import Input from "../Input/Input";
 import { fira } from "@/styles/fonts";
+import axios from "axios";
 
 export default function ContactCard() {
   const nameRef = useRef<HTMLInputElement | null>(null);
   const emailRef = useRef<HTMLInputElement | null>(null);
   const messageRef = useRef<HTMLTextAreaElement | null>(null);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/message`, {
+      name: nameRef.current?.value,
+      email: emailRef.current?.value,
+      message: messageRef.current?.value,
+    });
 
     if (nameRef.current) nameRef.current.value = "";
     if (emailRef.current) emailRef.current.value = "";
