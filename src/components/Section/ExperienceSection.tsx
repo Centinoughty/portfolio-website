@@ -21,9 +21,7 @@ export default function ExperienceSection() {
 
   const fetchExp = async () => {
     try {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/experience`
-      );
+      const res = await axios.get("admin.nadeemsiyam.com/api/experience");
       setExperiences(res.data);
     } catch (error) {
       console.log("Fetching experiences failed");
