@@ -1,3 +1,13 @@
+export interface Project {
+  name: string;
+  description: string;
+  featured: boolean;
+  tools: string[];
+  github?: string;
+  image?: string;
+  url?: string;
+}
+
 export const projects: Project[] = [
   {
     name: "Letscode",

@@ -1,3 +1,4 @@
+import { Project } from "@/data/projects";
 import { bric, mont } from "@/styles/fonts";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";

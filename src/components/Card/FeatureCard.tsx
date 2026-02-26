@@ -3,6 +3,7 @@ import Image from "next/image";
 import Skill from "../Text/Skill";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { Project } from "@/data/projects";
 
 export default function FeatureCard({ feature }: { feature: Project }) {
   return (
