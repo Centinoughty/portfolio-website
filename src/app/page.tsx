@@ -3,7 +3,7 @@ import Title from "@/components/Text/Title";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import getHomeData from "@/lib/getHomeData";
+import { projects } from "@/data/projects";
 const Heading = dynamic(() => import("@//components/Text/Heading"));
 const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"));
 const FeatureCard = dynamic(() => import("@/components/Card/FeatureCard"));
@@ -11,12 +11,10 @@ const ContactCard = dynamic(() => import("@/components/Card/ContactCard"));
 const ConnectCard = dynamic(() => import("@/components/Card/ConnectCard"));
 const SkillsGrid = dynamic(() => import("@/components/Grid/SkillsGrid"));
 const ExperienceSection = dynamic(
-  () => import("@/components/Section/ExperienceSection")
+  () => import("@/components/Section/ExperienceSection"),
 );
 
 export default async function Home() {
-  const { projects, featured, experiences, skills } = await getHomeData();
-
   return (
     <>
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
@@ -70,7 +68,7 @@ export default async function Home() {
             <div className="lg:max-w-lg xl:max-w-xl">
               <div className="flex flex-col gap-2">
                 <Heading text="skills" />
-                <SkillsGrid skills={skills} />
+                <SkillsGrid />
               </div>
             </div>
           </div>
@@ -81,7 +79,7 @@ export default async function Home() {
 
       <section id="experience" className="mx-[5%]">
         <Title text="Experience" />
-        <ExperienceSection experiences={experiences} />
+        <ExperienceSection />
       </section>
 
       <div className="my-[12vh]"></div>
@@ -89,9 +87,11 @@ export default async function Home() {
       <section id="projects" className="mx-[5%]">
         <Title text="Featured Projects" />
         <div className="md:mx-[5%] grid lg:grid-cols-2 gap-[5%]">
-          {featured.map((feature, idx) => (
-            <FeatureCard key={idx} feature={feature} />
-          ))}
+          {projects
+            .filter((project) => project.featured)
+            .map((feature, idx) => (
+              <FeatureCard key={idx} feature={feature} />
+            ))}
         </div>
       </section>
 
@@ -100,9 +100,12 @@ export default async function Home() {
       <section id="all-projects" className="mx-[5%]">
         <Title text="Recent Projects" />
         <div className="md:mx-[3%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5vw]">
-          {projects.slice(0, 6).map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
-          ))}
+          {projects
+            .filter((project) => !project.featured)
+            .slice(0, 6)
+            .map((project, idx) => (
+              <ProjectCard key={idx} project={project} />
+            ))}
         </div>
         <div className="md:mx-[3%] mt-6 md:mt-8 flex justify-end">
           <Link
