@@ -2,8 +2,6 @@ import {
   Bricolage_Grotesque,
   Fira_Mono,
   Homemade_Apple,
-  Montserrat,
-  Poppins,
 } from "next/font/google";
 
 export const bric = Bricolage_Grotesque({ subsets: ["latin"] });

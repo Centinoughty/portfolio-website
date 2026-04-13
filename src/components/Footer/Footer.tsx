@@ -1,4 +1,4 @@
-import { fira, mont } from "@/styles/fonts";
+import { fira } from "@/styles/fonts";
 
 export default function Footer() {
   return (
