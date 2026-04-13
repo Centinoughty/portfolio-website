@@ -1,5 +1,5 @@
 import { Project } from "@/data/projects";
-import { bric, fira } from "@/styles/fonts";
+import { bric, mont } from "@/styles/fonts";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
       </div>
-      <p className={`${fira.className} tracking-wide`}>{project.description}</p>
+      <p className={`${mont.className} tracking-wide`}>{project.description}</p>
       <ul className="font-mono flex flex-wrap gap-2 text-gray-800">
         {project.tools.map((tool, idx) => (
           <li key={idx}>{tool}</li>

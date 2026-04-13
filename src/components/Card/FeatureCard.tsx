@@ -1,4 +1,4 @@
-import { bric, fira } from "@/styles/fonts";
+import { bric, mont } from "@/styles/fonts";
 import Image from "next/image";
 import Skill from "../Text/Skill";
 import Link from "next/link";
@@ -47,7 +47,7 @@ export default function FeatureCard({ feature }: { feature: Project }) {
             </Link>
           )}
         </div>
-        <p className={`${fira.className} tracking-wide px-2`}>
+        <p className={`${mont.className} tracking-wide px-2`}>
           {feature.description}
         </p>
         <ul className="mt-2 p-2 flex flex-wrap gap-2 font-mono">
