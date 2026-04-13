@@ -4,7 +4,8 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { projects } from "@/data/projects";
-const Heading = dynamic(() => import("@//components/Text/Heading"));
+
+const Heading = dynamic(() => import("@/components/Text/Heading"));
 const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"));
 const FeatureCard = dynamic(() => import("@/components/Card/FeatureCard"));
 const ContactCard = dynamic(() => import("@/components/Card/ContactCard"));
@@ -14,7 +15,7 @@ const ExperienceSection = dynamic(
   () => import("@/components/Section/ExperienceSection"),
 );
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
@@ -22,7 +23,7 @@ export default async function Home() {
           <div
             className={`${bric.className} text-[14vw] md:text-[10vw] lg:text-[8vw] xl:text-[6vw] font-bold text-[var(--primary-color)]`}
           >
-            <h1>I'm Nadeem.</h1>
+            <h1>I&apos;m Nadeem.</h1>
             <h2 className="-mt-[7%]">A Developer.</h2>
           </div>
           <div className="mx-4 sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
@@ -42,7 +43,7 @@ export default async function Home() {
           <div className="md:mt-8">
             <div className="relative w-[280px] md:w-[310px] aspect-square bg-[var(--primary-color)] rounded-full overflow-hidden">
               <Image
-                src="/og-nadeem.jpg"
+                src="/og-nadeem.webp"
                 alt="Nadeem M Siyam"
                 fill
                 sizes="(min-width: 768px) 310px, 280px"
@@ -110,7 +111,7 @@ export default async function Home() {
         <div className="md:mx-[3%] mt-6 md:mt-8 flex justify-end">
           <Link
             href="/projects"
-            aria-label="Link to profile page"
+            aria-label="Link to all projects page"
             className={`${fira.className} font-semibold underline underline-offset-2 text-[var(--primary-color)] text-[4vw] sm:text-[3.4vw] md:text-[2.2vw] lg:text-[1.6vw] xl:text-[1vw]`}
           >
             see all projects

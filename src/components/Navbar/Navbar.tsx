@@ -9,23 +9,20 @@ export default function Navbar() {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   useEffect(() => {
+    if (!menuOpen) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        toggleMenu();
+        setMenuOpen(false);
       }
     };
 
-    if (menuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuOpen, toggleMenu]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
 
   return (
     <>
@@ -37,10 +34,9 @@ export default function Navbar() {
         </div>
 
         <div className="hidden text-gray-600 font-mono md:flex gap-4">
-          <Link href="#">About</Link>
+          <Link href="/#about">About</Link>
           <Link href="/projects">Projects</Link>
-          <Link href="#">Play</Link>
-          <Link href="#">Contact</Link>
+          <Link href="/#connect">Contact</Link>
           <Link
             href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"
             target="_blank"
@@ -79,7 +75,7 @@ export default function Navbar() {
           ref={menuRef}
           className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/20 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-50"
         >
-          <Link href="/" aria-label="About Section" onClick={toggleMenu}>
+          <Link href="/#about" aria-label="About Section" onClick={toggleMenu}>
             About
           </Link>
           <Link
@@ -89,10 +85,11 @@ export default function Navbar() {
           >
             Projects
           </Link>
-          <Link href="#" aria-label="Play page" onClick={toggleMenu}>
-            Play
-          </Link>
-          <Link href="#" aria-label="Contact section" onClick={toggleMenu}>
+          <Link
+            href="/#connect"
+            aria-label="Contact section"
+            onClick={toggleMenu}
+          >
             Contact
           </Link>
           <Link

@@ -3,7 +3,6 @@
 import { FormEvent, useRef, useState } from "react";
 import Input from "../Input/Input";
 import { bric, fira } from "@/styles/fonts";
-import axios from "axios";
 import { FiCheckCircle, FiXCircle } from "react-icons/fi";
 
 export default function ContactCard() {
@@ -23,11 +22,17 @@ export default function ContactCard() {
     setSending(true);
 
     try {
-      await axios.post("https://admin.nadeemsiyam.com/api/message", {
-        name: nameRef.current?.value,
-        email: emailRef.current?.value,
-        message: messageRef.current?.value,
+      const res = await fetch("https://admin.nadeemsiyam.com/api/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nameRef.current?.value,
+          email: emailRef.current?.value,
+          message: messageRef.current?.value,
+        }),
       });
+
+      if (!res.ok) throw new Error("Request failed");
 
       if (nameRef.current) nameRef.current.value = "";
       if (emailRef.current) emailRef.current.value = "";
@@ -36,7 +41,7 @@ export default function ContactCard() {
       setToast("Message sent successfully!");
       setSuccess(true);
       setTimeout(() => setToast(null), 3000);
-    } catch (error) {
+    } catch {
       setToast("Failed to send message. Try again.");
       setSuccess(false);
       setTimeout(() => setToast(null), 3000);

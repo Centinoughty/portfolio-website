@@ -25,8 +25,7 @@ export const projects: Project[] = [
       "PostgreSQL",
     ],
     github: "https://github.com/Centinoughty/letscode",
-    image: "/temp.png",
-    url: "",
+    image: "/temp.png",  // add a real screenshot here
   },
   {
     name: "Null Pointer",
@@ -35,8 +34,7 @@ export const projects: Project[] = [
     featured: true,
     tools: ["Node", "Express", "Multer", "MongoDB"],
     github: "https://github.com/Centinoughty/null-pointer",
-    image: "/temp.png",
-    url: "",
+    image: "/temp.png",  // add a real screenshot here
   },
   {
     name: "Minerva",
@@ -44,9 +42,6 @@ export const projects: Project[] = [
       "Contributed to Ragam 2025 by developing backend systems and automating email workflows using custom scripts, enabling efficient communication, streamlined event updates, and improved participant engagement at scale.",
     featured: false,
     tools: ["React", "GSAP", "Strapi", "GAuth", "Docker"],
-    github: "",
-    image: "",
-    url: "",
   },
   {
     name: "Ragam 2025",
@@ -55,17 +50,13 @@ export const projects: Project[] = [
     featured: false,
     tools: ["React", "Node", "Express", "Strapi"],
     github: "https://github.com/Ragam-25",
-    image: "",
-    url: "",
   },
   {
     name: "Tathva 2024",
     description:
-      "I'm a second-year B.Tech CSE student at NIT Calicut, interested in web and app development, DevOps, and AI/ML. I enjoy building applications, optimizing systems, and exploring new technologies.",
+      "Contributed to Tathva 2024, NITC's annual technical fest, working on the web platform with a focus on performance and smooth user experience across events and registrations.",
     featured: false,
     tools: ["React", "GSAP", "Strapi"],
     github: "https://github.com/Tathva-24",
-    image: "",
-    url: "",
   },
 ];

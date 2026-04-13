@@ -13,7 +13,7 @@ export default function Home() {
         <p
           className={`${bric.className} text-3xl font-bold text-(--primary-color)`}
         >
-          Can't find your page...
+          Can&apos;t find your page...
         </p>
       </div>
     </>

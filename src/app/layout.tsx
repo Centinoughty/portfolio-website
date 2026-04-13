@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Head from "next/head";
+import "./globals.css"
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
@@ -31,6 +30,12 @@ export const metadata: Metadata = {
     follow: true,
     nocache: false,
   },
+  verification: {
+    google: "FucCzmuCzs8dQQrVB-P_g0CIprT8LjT1eUFSwO4on2M",
+  },
+  alternates: {
+    canonical: "https://nadeemsiyam.com",
+  },
   openGraph: {
     title: "Nadeem M Siyam | Full Stack & Software Engineer",
     description:
@@ -58,6 +63,24 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Nadeem M Siyam",
+  url: "https://nadeemsiyam.com",
+  sameAs: [
+    "https://github.com/Centinoughty",
+    "https://linkedin.com/in/nadeem-m-siyam",
+    "https://leetcode.com/Centinoughty",
+    "https://www.instagram.com/_nad_eee_",
+  ],
+  jobTitle: "Software Engineer, Full Stack Developer, DevOps Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Freelance / Open Source",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,42 +88,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="FucCzmuCzs8dQQrVB-P_g0CIprT8LjT1eUFSwO4on2M"
-        />
-        <link rel="icon" href="favicon.ico" />
-        <link
-          rel="canonical"
-          aria-label="my website"
-          href="https://nadeemsiyam.com"
-        />
+      <body className="antialiased bg-[var(--accent)]">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Nadeem M Siyam",
-              url: "https://nadeemsiyam.com",
-              sameAs: [
-                "https://github.com/Centinoughty",
-                "https://linkedin.com/in/nadeem-m-siyam",
-                "https://leetcode.com/Centinoughty",
-                "https://www.instagram.com/_nad_eee_",
-              ],
-              jobTitle:
-                "Software Engineer, Full Stack Developer, DevOps Engineer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Freelance / Open Source",
-              },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </Head>
-      <body className="antialiased bg-[var(--accent)]">
         <Navbar />
         {children}
         <Footer />
