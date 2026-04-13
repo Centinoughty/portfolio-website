@@ -109,12 +109,12 @@ function ProjectRow({ project }: { project: Project }) {
 
       {/* ── Expand panel — CSS grid-rows trick for smooth height animation ── */}
       <div
-        className={`grid transition-all duration-[380ms] ${
+        className={`grid overflow-hidden transition-all duration-[380ms] ${
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
         style={{ transitionTimingFunction: "cubic-bezier(0.4,0,0.2,1)" }}
       >
-        <div className="overflow-hidden">
+        <div className="min-h-0">
           <div className="px-4 sm:px-6 pt-1 pb-6 flex flex-col sm:flex-row gap-5 sm:gap-10">
             {/* Description */}
             <p

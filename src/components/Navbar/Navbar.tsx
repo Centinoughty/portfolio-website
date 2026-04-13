@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="z-10 absolute top-0 left-0 w-full px-[3%] md:px-[13%] py-4 border-b border-b-gray-300 flex justify-between items-center backdrop-blur-[5px]">
+      <nav className="z-50 absolute top-0 left-0 w-full px-[3%] md:px-[13%] py-4 border-b border-b-gray-300 flex justify-between items-center backdrop-blur-[5px]">
         <div className={`${home.className} md:text-lg`}>
           <Link href="/" className="px-4 py-1">
             nadeem

@@ -46,19 +46,22 @@ export default function ExperienceSection() {
               const blockHeight = 85;
 
               const leftPx = (idx / numSlots) * (containerWidth - blockWidth);
-
               const topPx = (idx / numSlots) * (containerHeight - blockHeight);
 
               return (
                 <div
                   key={idx}
-                  className={`md:absolute bg-[var(--primary-color)] px-8 py-3 rounded-full flex justify-between items-center ${bric.className}`}
-                  style={{
-                    left: `${leftPx}px`,
-                    top: `${topPx}px`,
-                    width: `${blockWidth}px`,
-                    height: `${blockHeight}px`,
-                  }}
+                  className={`md:absolute bg-[var(--primary-color)] px-8 py-3 rounded-full flex justify-between items-center ${bric.className} w-full md:w-auto`}
+                  style={
+                    containerWidth >= 768
+                      ? {
+                          right: `${leftPx}px`,
+                          top: `${topPx}px`,
+                          width: `${blockWidth}px`,
+                          height: `${blockHeight}px`,
+                        }
+                      : undefined
+                  }
                 >
                   <div>
                     <h3 className="font-bold text-[var(--accent)] text-[4.2vw] sm:text-[3vw] md:text-[2.4vw] lg:text-[1.8vw] xl:text-[1.1vw]">
