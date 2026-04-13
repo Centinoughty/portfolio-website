@@ -4,6 +4,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import GallerySection from "@/components/Section/GallerySection";
 
 const Heading = dynamic(() => import("@/components/Text/Heading"));
 const ProjectCard = dynamic(() => import("@/components/Card/ProjectCard"));
@@ -118,6 +119,10 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <div className="my-[12vh]"></div>
+
+      <GallerySection />
 
       <div className="my-[12vh]"></div>
 
