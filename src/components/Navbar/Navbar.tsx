@@ -34,7 +34,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden text-gray-600 font-mono md:flex gap-4">
-          <Link href="/#about">About</Link>
+          <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/#connect">Contact</Link>
           <Link
@@ -75,8 +75,8 @@ export default function Navbar() {
           ref={menuRef}
           className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/20 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-50"
         >
-          <Link href="/#about" aria-label="About Section" onClick={toggleMenu}>
-            About
+          <Link href="/" aria-label="About Section" onClick={toggleMenu}>
+            Home
           </Link>
           <Link
             href="/projects"

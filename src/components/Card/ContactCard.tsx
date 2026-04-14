@@ -22,18 +22,6 @@ export default function ContactCard() {
     setSending(true);
 
     try {
-      const res = await fetch("https://admin.nadeemsiyam.com/api/message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: nameRef.current?.value,
-          email: emailRef.current?.value,
-          message: messageRef.current?.value,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Request failed");
-
       if (nameRef.current) nameRef.current.value = "";
       if (emailRef.current) emailRef.current.value = "";
       if (messageRef.current) messageRef.current.value = "";

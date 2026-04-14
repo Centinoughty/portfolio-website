@@ -61,7 +61,14 @@ function ProjectRow({ project }: { project: Project }) {
         </span>
 
         {/* Stack pills — hidden on mobile */}
-        <span className="hidden sm:flex flex-wrap gap-1.5 justify-end max-w-[38%] shrink-0">
+
+        <span
+          className={`
+            hidden sm:flex flex-wrap gap-1.5 justify-end max-w-[38%] shrink-0
+            transition-all duration-300 ease-in-out overflow-hidden
+            ${open ? "opacity-0 max-w-0 scale-95" : "opacity-100 max-w-[38%] scale-100"}
+          `}
+        >
           {project.tools.slice(0, 4).map((tool) => (
             <span
               key={tool}
