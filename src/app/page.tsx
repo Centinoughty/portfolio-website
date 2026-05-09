@@ -19,7 +19,7 @@ const ExperienceSection = dynamic(
 export default function Home() {
   return (
     <>
-      <main className="flex justify-center bg-gradient-to-b from-[#e6eee3] to-[var(--accent)]">
+      <main className="flex justify-center">
         <div className="mt-32 flex flex-col items-center">
           <div
             className={`${bric.className} text-[14vw] md:text-[10vw] lg:text-[8vw] xl:text-[6vw] font-bold text-[var(--primary-color)]`}
