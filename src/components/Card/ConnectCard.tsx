@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EMAIl } from "../../../util/constant";
+import { EMAIL } from "../../../util/constant";
 import { bric } from "@/styles/fonts";
 
 export default function ConnectCard() {
@@ -11,11 +11,11 @@ export default function ConnectCard() {
         >
           <p>Send me an email at</p>
           <Link
-            href={`mailto:${EMAIl}`}
+            href={`mailto:${EMAIL}`}
             aria-label="Nadeem's email"
             className="font-semibold tracking-wide"
           >
-            {EMAIl}
+            {EMAIL}
           </Link>
         </div>
       </div>

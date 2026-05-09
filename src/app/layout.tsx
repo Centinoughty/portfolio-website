@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css"
+// @ts-expect-error -- Next.js handles global CSS side-effect imports at build time.
+import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
@@ -88,7 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[var(--accent)]">
+      <body className="min-h-screen flex flex-col justify-between antialiased bg-[var(--accent)]">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { bric, fira } from "@/styles/fonts";
+import { fira } from "@/styles/fonts";
 import Title from "../Text/Title";
 
-// ── Replace src values with your actual photo paths ──
 const photos = [
   {
     src: "https://picsum.photos/1000/1000",
@@ -29,7 +28,6 @@ export default function GallerySection() {
       <Title text="A Glimpse" />
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px] lg:auto-rows-[260px]">
-        {/* Photo 1 — tall, spans 2 rows */}
         <div className="relative col-span-1 row-span-2 group overflow-hidden rounded-2xl">
           <Image
             src={photos[0].src}
@@ -47,7 +45,6 @@ export default function GallerySection() {
           <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
         </div>
 
-        {/* Photo 2 — wide, spans 2 columns */}
         <div className="relative col-span-1 md:col-span-2 row-span-1 group overflow-hidden rounded-2xl">
           <Image
             src={photos[1].src}
@@ -65,7 +62,6 @@ export default function GallerySection() {
           <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
         </div>
 
-        {/* Photo 3 — square */}
         <div className="relative col-span-1 md:col-span-2 row-span-1 group overflow-hidden rounded-2xl">
           <Image
             src={photos[2].src}

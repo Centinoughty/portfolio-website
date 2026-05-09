@@ -9,7 +9,7 @@ interface Input {
 
 export default forwardRef(function Input(
   { textarea = false, ...props }: Input,
-  ref
+  ref,
 ) {
   const id = `input-${props.title.toLowerCase().replace(/\s+/g, "-")}`;
   const className = `outline-none border-2 border-[var(--primary-color)]/20 focus:border-[var(--primary-color)]/80 rounded-md px-2 py-1 font-mont tracking-wide`;

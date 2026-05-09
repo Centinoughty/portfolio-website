@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="hidden text-gray-600 font-mono md:flex gap-4">
           <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
-          <Link href="/#connect">Contact</Link>
+          <Link href="/blogs">Blogs</Link>
           <Link
             href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"
             target="_blank"
@@ -73,7 +73,7 @@ export default function Navbar() {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/20 backdrop-blur-[10px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-50"
+          className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/20 backdrop-blur-[6px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-50"
         >
           <Link href="/" aria-label="About Section" onClick={toggleMenu}>
             Home
@@ -85,12 +85,8 @@ export default function Navbar() {
           >
             Projects
           </Link>
-          <Link
-            href="/#connect"
-            aria-label="Contact section"
-            onClick={toggleMenu}
-          >
-            Contact
+          <Link href="/blogs" aria-label="Contact section" onClick={toggleMenu}>
+            Blogs
           </Link>
           <Link
             href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"

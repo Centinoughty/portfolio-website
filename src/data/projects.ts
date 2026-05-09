@@ -25,7 +25,7 @@ export const projects: Project[] = [
       "PostgreSQL",
     ],
     github: "https://github.com/Centinoughty/letscode",
-    image: "/temp.png",  // add a real screenshot here
+    image: "/temp.png",
   },
   {
     name: "Null Pointer",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     featured: true,
     tools: ["Node", "Express", "Multer", "MongoDB"],
     github: "https://github.com/Centinoughty/null-pointer",
-    image: "/temp.png",  // add a real screenshot here
+    image: "/temp.png",
   },
   {
     name: "Minerva",
