@@ -25,27 +25,27 @@ export default function ProjectsPage() {
         <section className="mb-10 md:mb-14">
           <div className="flex items-center gap-3 mb-4">
             <h2
-              className={`${fira.className} shrink-0 text-sm uppercase tracking-[0.2em] text-[var(--primary-color)]/45`}
+              className={`${fira.className} shrink-0 text-sm uppercase tracking-[0.2em] text-[var(--primary-color)]/60`}
             >
               Featured
             </h2>
-            <div className="flex-1 h-px bg-[var(--primary-color)]/12" />
+            <div className="flex-1 h-px bg-[var(--primary-color)]/18" />
             <span
-              className={`${fira.className} shrink-0 tetx-sm text-[var(--primary-color)]/30`}
+              className={`${fira.className} shrink-0 text-sm text-[var(--primary-color)]/45`}
             >
               {featured.length}
             </span>
           </div>
 
-          <div className="rounded-2xl overflow-hidden border border-[var(--primary-color)]/12">
-            <div className="hidden sm:flex px-6 py-3 border-b border-[var(--primary-color)]/10 bg-[var(--primary-color)]/[0.03]">
+          <div className="rounded-2xl overflow-hidden border border-[var(--primary-color)]/16 bg-white/35 shadow-[0_18px_50px_rgba(2,90,78,0.04)]">
+            <div className="hidden sm:flex px-6 py-3 border-b border-[var(--primary-color)]/12 bg-[var(--primary-color)]/[0.055]">
               <span
-                className={`${fira.className} flex-1 text-sm uppercase tracking-wide text-[var(--primary-color)]/35`}
+                className={`${fira.className} flex-1 text-sm uppercase tracking-wide text-[var(--primary-color)]/50`}
               >
                 Project
               </span>
               <span
-                className={`${fira.className} w-[38%] text-right pr-10 text-sm uppercase tracking-wide text-[var(--primary-color)]/35`}
+                className={`${fira.className} w-[38%] text-right pr-10 text-sm uppercase tracking-wide text-[var(--primary-color)]/50`}
               >
                 Stack
               </span>
@@ -61,27 +61,27 @@ export default function ProjectsPage() {
         <section>
           <div className="flex items-center gap-3 mb-4">
             <h2
-              className={`${fira.className} shrink-0 text-sm uppercase tracking-[0.2em] text-[var(--primary-color)]/45`}
+              className={`${fira.className} shrink-0 text-sm uppercase tracking-[0.2em] text-[var(--primary-color)]/60`}
             >
               All projects
             </h2>
-            <div className="flex-1 h-px bg-[var(--primary-color)]/12" />
+            <div className="flex-1 h-px bg-[var(--primary-color)]/18" />
             <span
-              className={`${fira.className} shrink-0 text-sm text-[var(--primary-color)]/30`}
+              className={`${fira.className} shrink-0 text-sm text-[var(--primary-color)]/45`}
             >
               {rest.length}
             </span>
           </div>
 
-          <div className="rounded-2xl overflow-hidden border border-[var(--primary-color)]/12">
-            <div className="hidden sm:flex px-6 py-3 border-b border-[var(--primary-color)]/10 bg-[var(--primary-color)]/[0.03]">
+          <div className="rounded-2xl overflow-hidden border border-[var(--primary-color)]/16 bg-white/35 shadow-[0_18px_50px_rgba(2,90,78,0.04)]">
+            <div className="hidden sm:flex px-6 py-3 border-b border-[var(--primary-color)]/12 bg-[var(--primary-color)]/[0.055]">
               <span
-                className={`${fira.className} flex-1 text-sm uppercase tracking-wide text-[var(--primary-color)]/35`}
+                className={`${fira.className} flex-1 text-sm uppercase tracking-wide text-[var(--primary-color)]/50`}
               >
                 Project
               </span>
               <span
-                className={`${fira.className} w-[38%] text-right pr-10 text-sm uppercase tracking-wide text-[var(--primary-color)]/35`}
+                className={`${fira.className} w-[38%] text-right pr-10 text-sm uppercase tracking-wide text-[var(--primary-color)]/50`}
               >
                 Stack
               </span>

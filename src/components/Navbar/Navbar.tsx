@@ -3,19 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import { home } from "@/styles/fonts";
 import Link from "next/link";
-import { MdClose } from "react-icons/md";
+import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
-  const menuRef = useRef<HTMLDivElement | null>(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   useEffect(() => {
     if (!menuOpen) return;
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setMenuOpen(false);
       }
     };
@@ -25,79 +23,67 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <>
-      <nav className="z-50 absolute top-0 left-0 w-full px-[3%] md:px-[13%] py-4 border-b border-b-gray-300 flex justify-between items-center backdrop-blur-[5px]">
-        <div className={`${home.className} md:text-lg`}>
-          <Link href="/" className="px-4 py-1">
+    <div ref={navRef} className="isolate absolute left-0 top-0 z-50 w-full">
+      <nav className="relative flex w-full items-center justify-between border-b border-[var(--primary-color)]/10 bg-[rgba(241,237,230,0.72)] px-[5%] py-3 backdrop-blur-md md:px-[13%] md:py-4">
+        <div className={`${home.className} text-sm md:text-lg`}>
+          <Link href="/" className="inline-block px-2 py-1 transition-opacity hover:opacity-65">
             nadeem
           </Link>
         </div>
 
-        <div className="hidden text-gray-600 font-mono md:flex gap-4">
-          <Link href="/">Home</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/blogs">Blogs</Link>
+        <div className="hidden items-center gap-6 font-mono text-sm text-[var(--secondary-color)] md:flex">
+          <Link href="/" className="transition-colors hover:text-[var(--primary-color)]">Home</Link>
+          <Link href="/projects" className="transition-colors hover:text-[var(--primary-color)]">Projects</Link>
+          <Link href="/blogs" className="transition-colors hover:text-[var(--primary-color)]">Blogs</Link>
           <Link
             href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"
             target="_blank"
+            className="transition-colors hover:text-[var(--primary-color)]"
           >
             Resume
           </Link>
         </div>
 
-        <div
-          className="md:hidden text-xl text-gray-700 cursor-pointer"
-          onClick={toggleMenu}
+        <button
+          type="button"
+          className="relative z-10 inline-flex min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-full p-2 text-[var(--primary-color)] transition-colors hover:bg-[var(--primary-color)]/10 active:bg-[var(--primary-color)]/15 md:hidden"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
-          {menuOpen ? (
-            <MdClose color="#025a4e" />
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 rotate-180"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="#025a4e"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              ></path>
-            </svg>
-          )}
-        </div>
+          {menuOpen ? <FiX size={20} aria-hidden="true" /> : <FiMenu size={20} aria-hidden="true" />}
+        </button>
       </nav>
 
       {menuOpen && (
         <div
-          ref={menuRef}
-          className="md:hidden absolute top-[45px] my-4 mx-1 px-10 right-0 rounded-xl bg-[var(--primary-color)]/20 backdrop-blur-[6px] text-black font-mono flex flex-col items-center gap-4 py-4 shadow-md z-50"
+          id="mobile-navigation"
+          className="mx-[5%] mt-3 flex flex-col gap-1 rounded-2xl border border-[var(--primary-color)]/12 bg-[rgba(241,237,230,0.94)] p-2 font-mono text-sm text-[var(--secondary-color)] shadow-[0_18px_45px_rgba(2,90,78,0.12)] backdrop-blur-md md:hidden"
         >
-          <Link href="/" aria-label="About Section" onClick={toggleMenu}>
+          <Link href="/" className="rounded-xl px-4 py-3 transition-colors hover:bg-[var(--primary-color)]/8 hover:text-[var(--primary-color)]" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
           <Link
             href="/projects"
-            aria-label="Projects page"
-            onClick={toggleMenu}
+            className="rounded-xl px-4 py-3 transition-colors hover:bg-[var(--primary-color)]/8 hover:text-[var(--primary-color)]"
+            onClick={() => setMenuOpen(false)}
           >
             Projects
           </Link>
-          <Link href="/blogs" aria-label="Contact section" onClick={toggleMenu}>
+          <Link href="/blogs" className="rounded-xl px-4 py-3 transition-colors hover:bg-[var(--primary-color)]/8 hover:text-[var(--primary-color)]" onClick={() => setMenuOpen(false)}>
             Blogs
           </Link>
           <Link
             href="https://drive.google.com/file/d/1G8V_9BkrXbWwFCDKpe8Eeyg8T8jjzeek/view?usp=sharing"
-            aria-label="My Resume"
             target="_blank"
-            onClick={toggleMenu}
+            className="rounded-xl px-4 py-3 transition-colors hover:bg-[var(--primary-color)]/8 hover:text-[var(--primary-color)]"
+            onClick={() => setMenuOpen(false)}
           >
             Resume
           </Link>
         </div>
       )}
-    </>
+    </div>
   );
 }

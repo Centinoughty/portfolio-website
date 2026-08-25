@@ -14,8 +14,8 @@ export default function ProjectRow({ project }: { project: Project }) {
     <div
       className={`border-b border-[var(--primary-color)]/15 last:border-b-0 transition-colors duration-200 ${
         open
-          ? "bg-[var(--primary-color)]/[0.04]"
-          : "hover:bg-[var(--primary-color)]/[0.025]"
+          ? "bg-[var(--primary-color)]/[0.075]"
+            : "hover:bg-[var(--primary-color)]/[0.045]"
       }`}
     >
       <button
@@ -27,14 +27,14 @@ export default function ProjectRow({ project }: { project: Project }) {
           className={`shrink-0 w-[22px] h-[22px] flex items-center justify-center rounded-full border transition-all duration-300 ${
             open
               ? "rotate-90 bg-[var(--primary-color)] border-[var(--primary-color)]"
-              : "border-[var(--primary-color)]/30 bg-transparent"
+              : "border-[var(--primary-color)]/35 bg-[var(--accent)]/30"
           }`}
           style={{ transform: open ? "rotate(90deg)" : "rotate(0deg)" }}
         >
           <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
             <path
               d="M2.5 1.5L6.5 4.5L2.5 7.5"
-              stroke={open ? "#f1ede6" : "#025a4e"}
+              stroke={open ? "#f1ede6" : "#4b5f5a"}
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -50,7 +50,7 @@ export default function ProjectRow({ project }: { project: Project }) {
           </span>
           {project.featured && (
             <span
-              className={`${fira.className} shrink-0 text-[2.5vw] sm:text-[1.2vw] md:text-[0.9vw] lg:text-[0.65vw] xl:text-[0.55vw] font-normal tracking-[0.15em] uppercase px-2 py-0.5 rounded-full bg-[var(--primary-color)] text-[var(--accent)]`}
+              className={`${fira.className} shrink-0 text-[2.5vw] sm:text-[1.2vw] md:text-[0.9vw] lg:text-[0.65vw] xl:text-[0.55vw] font-normal tracking-[0.15em] uppercase px-2 py-0.5 rounded-full bg-[var(--primary-color)]/90 text-[var(--accent)] shadow-[0_4px_12px_rgba(2,90,78,0.16)]`}
             >
               Featured
             </span>
@@ -67,14 +67,14 @@ export default function ProjectRow({ project }: { project: Project }) {
           {project.tools.slice(0, 4).map((tool) => (
             <span
               key={tool}
-              className={`${fira.className} text-[1.5vw] md:text-[1vw] lg:text-[0.72vw] xl:text-[0.58vw] px-2 py-0.5 rounded-full bg-[var(--primary-color)]/10 text-[var(--secondary-color)]`}
+              className={`${fira.className} text-[1.5vw] md:text-[1vw] lg:text-[0.72vw] xl:text-[0.58vw] px-2 py-0.5 rounded-full bg-[var(--primary-color)]/12 text-[var(--secondary-color)]`}
             >
               {tool}
             </span>
           ))}
           {project.tools.length > 4 && (
             <span
-              className={`${fira.className} text-[1.5vw] md:text-[1vw] lg:text-[0.72vw] xl:text-[0.58vw] px-2 py-0.5 rounded-full bg-[var(--primary-color)]/10 text-[var(--secondary-color)]`}
+              className={`${fira.className} text-[1.5vw] md:text-[1vw] lg:text-[0.72vw] xl:text-[0.58vw] px-2 py-0.5 rounded-full bg-[var(--primary-color)]/12 text-[var(--secondary-color)]`}
             >
               +{project.tools.length - 4}
             </span>
@@ -90,7 +90,7 @@ export default function ProjectRow({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               aria-label={`GitHub — ${project.name}`}
-              className="p-1.5 text-[var(--primary-color)]/40 hover:text-[var(--primary-color)] transition-colors rounded"
+              className="rounded p-1.5 text-[var(--primary-color)]/50 transition-colors hover:bg-[var(--primary-color)]/10 hover:text-[var(--primary-color)]"
             >
               <FaGithub size={15} />
             </Link>
@@ -100,7 +100,7 @@ export default function ProjectRow({ project }: { project: Project }) {
               href={project.url}
               target="_blank"
               aria-label={`Live — ${project.name}`}
-              className="p-1.5 text-[var(--primary-color)]/40 hover:text-[var(--primary-color)] transition-colors rounded"
+              className="rounded p-1.5 text-[var(--primary-color)]/50 transition-colors hover:bg-[var(--primary-color)]/10 hover:text-[var(--primary-color)]"
             >
               <GoArrowUpRight size={17} />
             </Link>
@@ -133,7 +133,7 @@ export default function ProjectRow({ project }: { project: Project }) {
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
-                      className={`${fira.className} text-[2.8vw] sm:text-[1.4vw] md:text-[1vw] lg:text-[0.72vw] xl:text-[0.62vw] px-2.5 py-1 rounded-full border border-[var(--primary-color)]/20 text-[var(--secondary-color)]`}
+                      className={`${fira.className} text-[2.8vw] sm:text-[1.4vw] md:text-[1vw] lg:text-[0.72vw] xl:text-[0.62vw] px-2.5 py-1 rounded-full border border-[var(--primary-color)]/24 bg-[var(--accent)]/45 text-[var(--secondary-color)]`}
                     >
                       {tool}
                     </span>

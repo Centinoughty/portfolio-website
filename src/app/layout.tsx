@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://nadeemsiyam.com/og-nadeem.webp",
+        url: "https://nadeemsiyam.com/nadeem.jpeg",
         width: 1200,
         height: 630,
         alt: "Nadeem M Siyam Portfolio Preview",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer, AI/ML and DevOps Enthusiast. Discover my work.",
     creator: "@NadeemSiyam",
-    images: ["https://nadeemsiyam.com/og-nadeem.webp"],
+    images: ["https://nadeemsiyam.com/nadeem.jpeg"],
   },
 };
 
@@ -87,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col justify-between antialiased bg-[var(--accent)]">
         <script
           type="application/ld+json"
